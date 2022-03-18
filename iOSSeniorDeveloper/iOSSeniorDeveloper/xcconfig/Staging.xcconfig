@@ -1,0 +1,17 @@
+//
+//  Staging.xcconfig
+//  iOSSeniorDeveloper
+//
+//  Created by Đỗ Hoàng Sơn on 18/03/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_NAME = Hello World staging
+PRODUCT_VERSION = 0.2
+PRODUCT_BUNDLE_IDENTIFIER = com.Framgia.HelloWorldStaging
+APP_ICON = AppIconStaging
+FRAMGIA_URL = http:\/\/staging.framgia.com.vn/
+
+

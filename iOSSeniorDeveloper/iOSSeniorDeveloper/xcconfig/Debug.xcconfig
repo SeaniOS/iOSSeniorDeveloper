@@ -1,0 +1,17 @@
+//
+//  Debug.xcconfig
+//  iOSSeniorDeveloper
+//
+//  Created by Đỗ Hoàng Sơn on 18/03/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_NAME = Hello World Debug
+PRODUCT_VERSION = 0.1
+PRODUCT_BUNDLE_IDENTIFIER = com.Framgia.HelloWorldDebug
+APP_ICON = AppIconDebug
+FRAMGIA_URL = http:\/\/debug.framgia.com.vn/
+
+

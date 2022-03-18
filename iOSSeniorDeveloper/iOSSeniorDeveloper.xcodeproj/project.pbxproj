@@ -36,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5646141827E42BE60078FCC2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		5646141927E42BFA0078FCC2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5646141A27E42C050078FCC2 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		5651041627E2E3440003DE23 /* iOSSeniorDeveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSeniorDeveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651041927E2E3440003DE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5651041B27E2E3440003DE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5646141B27E42C090078FCC2 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				5646141827E42BE60078FCC2 /* Debug.xcconfig */,
+				5646141A27E42C050078FCC2 /* Staging.xcconfig */,
+				5646141927E42BFA0078FCC2 /* Release.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
 		5651040D27E2E3440003DE23 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		5651041827E2E3440003DE23 /* iOSSeniorDeveloper */ = {
 			isa = PBXGroup;
 			children = (
+				5646141B27E42C090078FCC2 /* xcconfig */,
 				5651041927E2E3440003DE23 /* AppDelegate.swift */,
 				5651041B27E2E3440003DE23 /* SceneDelegate.swift */,
 				5651041D27E2E3440003DE23 /* ViewController.swift */,
@@ -318,6 +332,7 @@
 /* Begin XCBuildConfiguration section */
 		5646140C27E33D1D0078FCC2 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141A27E42C050078FCC2 /* Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -379,9 +394,10 @@
 		};
 		5646140D27E33D1D0078FCC2 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141A27E42C050078FCC2 /* Staging.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Staging";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -447,6 +463,7 @@
 		};
 		5651043E27E2E3450003DE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141827E42BE60078FCC2 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -508,6 +525,7 @@
 		};
 		5651043F27E2E3450003DE23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141927E42BFA0078FCC2 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -563,9 +581,10 @@
 		};
 		5651044127E2E3450003DE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141827E42BE60078FCC2 /* Debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Debug";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -593,9 +612,10 @@
 		};
 		5651044227E2E3450003DE23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141927E42BFA0078FCC2 /* Release.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Release";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

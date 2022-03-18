@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let framgiaUrl = infoForKey("Framgia Url") {
+            print(framgiaUrl)
+        }
     }
-
-
+    
+    func infoForKey(_ key: String) -> String? {
+        return (Bundle.main.infoDictionary?[key] as? String)?
+            .replacingOccurrences(of: "\\", with: "")
+    }
 }
 
