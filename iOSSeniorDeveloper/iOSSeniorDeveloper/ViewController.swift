@@ -12,14 +12,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let framgiaUrl = infoForKey("Framgia Url") {
-            print(framgiaUrl)
-        }
+        print(infoForKey("Framgia Url") ?? "")
+        defineTargetConfig()
     }
-    
+}
+
+extension ViewController {
     func infoForKey(_ key: String) -> String? {
         return (Bundle.main.infoDictionary?[key] as? String)?
             .replacingOccurrences(of: "\\", with: "")
+    }
+}
+
+extension ViewController {
+    private func defineTargetConfig() {
+#if DEBUG
+        print("DEBUG")
+#elseif STAGING
+        print("STAGING")
+#elseif RELEASE
+        print("RELEASE")
+#elseif DEBUG_DEV
+        print("DEBUG_DEV")
+#elseif STAGING_DEV
+        print("STAGING_DEV")
+#elseif RELEASE_DEV
+        print("RELEASE_DEV")
+#endif
     }
 }
 

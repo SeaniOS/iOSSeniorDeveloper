@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5646141E27E437610078FCC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041D27E2E3440003DE23 /* ViewController.swift */; };
+		5646141F27E437610078FCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041927E2E3440003DE23 /* AppDelegate.swift */; };
+		5646142027E437610078FCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041B27E2E3440003DE23 /* SceneDelegate.swift */; };
+		5646142327E437610078FCC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5651042427E2E3450003DE23 /* LaunchScreen.storyboard */; };
+		5646142427E437610078FCC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5651042227E2E3450003DE23 /* Assets.xcassets */; };
+		5646142527E437610078FCC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5651041F27E2E3440003DE23 /* Main.storyboard */; };
 		5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041927E2E3440003DE23 /* AppDelegate.swift */; };
 		5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041B27E2E3440003DE23 /* SceneDelegate.swift */; };
 		5651041E27E2E3440003DE23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041D27E2E3440003DE23 /* ViewController.swift */; };
@@ -39,6 +45,8 @@
 		5646141827E42BE60078FCC2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5646141927E42BFA0078FCC2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5646141A27E42C050078FCC2 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		5646142A27E437610078FCC2 /* iOSSeniorDeveloper_DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSeniorDeveloper_DEV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5646142B27E437620078FCC2 /* iOSSeniorDeveloper copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOSSeniorDeveloper copy-Info.plist"; path = "/Users/son.dh/Documents/iOSSeniorDeveloper/iOSSeniorDeveloper/iOSSeniorDeveloper copy-Info.plist"; sourceTree = "<absolute>"; };
 		5651041627E2E3440003DE23 /* iOSSeniorDeveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSeniorDeveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651041927E2E3440003DE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5651041B27E2E3440003DE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5646142127E437610078FCC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5651041327E2E3440003DE23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +111,7 @@
 				5651042F27E2E3450003DE23 /* iOSSeniorDeveloperTests */,
 				5651043927E2E3450003DE23 /* iOSSeniorDeveloperUITests */,
 				5651041727E2E3440003DE23 /* Products */,
+				5646142B27E437620078FCC2 /* iOSSeniorDeveloper copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +121,7 @@
 				5651041627E2E3440003DE23 /* iOSSeniorDeveloper.app */,
 				5651042C27E2E3450003DE23 /* iOSSeniorDeveloperTests.xctest */,
 				5651043627E2E3450003DE23 /* iOSSeniorDeveloperUITests.xctest */,
+				5646142A27E437610078FCC2 /* iOSSeniorDeveloper_DEV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +161,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5646141C27E437610078FCC2 /* iOSSeniorDeveloper_DEV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5646142627E437610078FCC2 /* Build configuration list for PBXNativeTarget "iOSSeniorDeveloper_DEV" */;
+			buildPhases = (
+				5646141D27E437610078FCC2 /* Sources */,
+				5646142127E437610078FCC2 /* Frameworks */,
+				5646142227E437610078FCC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSSeniorDeveloper_DEV;
+			productName = iOSSeniorDeveloper;
+			productReference = 5646142A27E437610078FCC2 /* iOSSeniorDeveloper_DEV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5651041527E2E3440003DE23 /* iOSSeniorDeveloper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5651044027E2E3450003DE23 /* Build configuration list for PBXNativeTarget "iOSSeniorDeveloper" */;
@@ -234,6 +268,7 @@
 			projectRoot = "";
 			targets = (
 				5651041527E2E3440003DE23 /* iOSSeniorDeveloper */,
+				5646141C27E437610078FCC2 /* iOSSeniorDeveloper_DEV */,
 				5651042B27E2E3450003DE23 /* iOSSeniorDeveloperTests */,
 				5651043527E2E3450003DE23 /* iOSSeniorDeveloperUITests */,
 			);
@@ -241,6 +276,16 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5646142227E437610078FCC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5646142327E437610078FCC2 /* LaunchScreen.storyboard in Resources */,
+				5646142427E437610078FCC2 /* Assets.xcassets in Resources */,
+				5646142527E437610078FCC2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5651041427E2E3440003DE23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +313,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5646141D27E437610078FCC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5646141E27E437610078FCC2 /* ViewController.swift in Sources */,
+				5646141F27E437610078FCC2 /* AppDelegate.swift in Sources */,
+				5646142027E437610078FCC2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5651041227E2E3440003DE23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,7 +452,7 @@
 			baseConfigurationReference = 5646141A27E42C050078FCC2 /* Staging.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Staging";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -417,6 +472,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sean.iOSSeniorDeveloper-Staging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,6 +516,102 @@
 				TEST_TARGET_NAME = iOSSeniorDeveloper;
 			};
 			name = Staging;
+		};
+		5646142727E437610078FCC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141827E42BE60078FCC2 /* Debug.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = "App Debug";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R868Q9952Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOSSeniorDeveloper copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sean.iOSSeniorDeveloper-Debug";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG_DEV;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5646142827E437610078FCC2 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141A27E42C050078FCC2 /* Staging.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = "App Staging";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R868Q9952Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOSSeniorDeveloper copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sean.iOSSeniorDeveloper-Staging";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING_DEV;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		5646142927E437610078FCC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646141927E42BFA0078FCC2 /* Release.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = "App Release";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R868Q9952Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOSSeniorDeveloper copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sean.iOSSeniorDeveloper-Release";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_DEV;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
 		};
 		5651043E27E2E3450003DE23 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -584,7 +736,7 @@
 			baseConfigurationReference = 5646141827E42BE60078FCC2 /* Debug.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Debug";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -615,7 +767,7 @@
 			baseConfigurationReference = 5646141927E42BFA0078FCC2 /* Release.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "App Release";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -635,6 +787,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sean.iOSSeniorDeveloper-Release";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,6 +873,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5646142627E437610078FCC2 /* Build configuration list for PBXNativeTarget "iOSSeniorDeveloper_DEV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5646142727E437610078FCC2 /* Debug */,
+				5646142827E437610078FCC2 /* Staging */,
+				5646142927E437610078FCC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5651041127E2E3440003DE23 /* Build configuration list for PBXProject "iOSSeniorDeveloper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -13,5 +13,3 @@ PRODUCT_VERSION = 0.1
 PRODUCT_BUNDLE_IDENTIFIER = com.Framgia.HelloWorldDebug
 APP_ICON = AppIconDebug
 FRAMGIA_URL = http:\/\/debug.framgia.com.vn/
-
-
