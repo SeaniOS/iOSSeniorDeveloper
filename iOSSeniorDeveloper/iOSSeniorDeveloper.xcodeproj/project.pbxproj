@@ -16,6 +16,8 @@
 		5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */; };
 		5651043B27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */; };
 		5651043D27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */; };
+		56C2578727EC0CC300EDE74C /* CashRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2578627EC0CC300EDE74C /* CashRegisterTests.swift */; };
+		56C2578927EC0DA500EDE74C /* CashRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2578827EC0DA500EDE74C /* CashRegister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5651043627E2E3450003DE23 /* iOSSeniorDeveloperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSeniorDeveloperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITests.swift; sourceTree = "<group>"; };
 		5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56C2578627EC0CC300EDE74C /* CashRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterTests.swift; sourceTree = "<group>"; };
+		56C2578827EC0DA500EDE74C /* CashRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				5651042227E2E3450003DE23 /* Assets.xcassets */,
 				5651042427E2E3450003DE23 /* LaunchScreen.storyboard */,
 				5651042727E2E3450003DE23 /* Info.plist */,
+				56C2578827EC0DA500EDE74C /* CashRegister.swift */,
 			);
 			path = iOSSeniorDeveloper;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */,
+				56C2578627EC0CC300EDE74C /* CashRegisterTests.swift */,
 			);
 			path = iOSSeniorDeveloperTests;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5651041E27E2E3440003DE23 /* ViewController.swift in Sources */,
+				56C2578927EC0DA500EDE74C /* CashRegister.swift in Sources */,
 				5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
 			);
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */,
+				56C2578727EC0CC300EDE74C /* CashRegisterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
