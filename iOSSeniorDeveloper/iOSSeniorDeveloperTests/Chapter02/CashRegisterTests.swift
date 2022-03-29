@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import iOSSeniorDeveloper
 
 class CashRegisterTests: XCTestCase {
     var availableFunds: Decimal!

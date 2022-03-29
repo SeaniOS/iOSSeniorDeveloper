@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import iOSSeniorDeveloper
+// @testable import iOSSeniorDeveloper
 
 class iOSSeniorDeveloperTests: XCTestCase {
 
