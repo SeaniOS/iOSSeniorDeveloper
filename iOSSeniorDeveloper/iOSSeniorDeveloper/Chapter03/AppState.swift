@@ -10,6 +10,9 @@ import Foundation
 enum AppState {
     case notStarted
     case inProgress
+    case paused
+    case completed
+    case caught
     
     var nextStateButtonLabel: String {
         switch self {
@@ -17,6 +20,8 @@ enum AppState {
             return "Start"
         case .inProgress:
             return "Pause"
+        default:
+            return ""
         }
     }
 }

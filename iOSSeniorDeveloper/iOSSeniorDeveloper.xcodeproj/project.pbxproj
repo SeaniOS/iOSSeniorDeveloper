@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561D991B27F40DCF0035B0E6 /* ChaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D991A27F40DCF0035B0E6 /* ChaseView.swift */; };
 		5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041927E2E3440003DE23 /* AppDelegate.swift */; };
 		5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041B27E2E3440003DE23 /* SceneDelegate.swift */; };
 		5651041E27E2E3440003DE23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651041D27E2E3440003DE23 /* ViewController.swift */; };
@@ -19,6 +20,11 @@
 		5682B95D27F2C2E900097F5C /* StepCountControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682B95C27F2C2E900097F5C /* StepCountControllerTests.swift */; };
 		5682B96427F2E91D00097F5C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9B5B27F165050093E322 /* AppModel.swift */; };
 		5682B96527F2E98000097F5C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9B5927F164DF0093E322 /* AppState.swift */; };
+		5685C45327F2FD000085DE67 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685C45227F2FD000085DE67 /* DataModelTests.swift */; };
+		5685C45627F2FD400085DE67 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685C45527F2FD400085DE67 /* DataModel.swift */; };
+		56AA382C27F3FAA100AB16EA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA382B27F3FAA100AB16EA /* AppError.swift */; };
+		56AA382F27F4065100AB16EA /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA382E27F4065100AB16EA /* ViewControllers.swift */; };
+		56AA383127F406D200AB16EA /* RootViewController+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA383027F406D200AB16EA /* RootViewController+Tests.swift */; };
 		56CB9B6327F166440093E322 /* CashRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2578627EC0CC300EDE74C /* CashRegisterTests.swift */; };
 		56CB9B6527F166890093E322 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9B6427F166890093E322 /* AppModelTests.swift */; };
 		56CB9B6827F16EC50093E322 /* CashRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C2578827EC0DA500EDE74C /* CashRegister.swift */; };
@@ -49,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		561D991A27F40DCF0035B0E6 /* ChaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseView.swift; sourceTree = "<group>"; };
 		5651041627E2E3440003DE23 /* iOSSeniorDeveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSeniorDeveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651041927E2E3440003DE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5651041B27E2E3440003DE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +70,11 @@
 		5682B95827F2C2DC00097F5C /* StepCountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountController.swift; sourceTree = "<group>"; };
 		5682B95927F2C2DC00097F5C /* StepCountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepCountController.xib; sourceTree = "<group>"; };
 		5682B95C27F2C2E900097F5C /* StepCountControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountControllerTests.swift; sourceTree = "<group>"; };
+		5685C45227F2FD000085DE67 /* DataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
+		5685C45527F2FD400085DE67 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		56AA382B27F3FAA100AB16EA /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		56AA382E27F4065100AB16EA /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
+		56AA383027F406D200AB16EA /* RootViewController+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Tests.swift"; sourceTree = "<group>"; };
 		56C2578627EC0CC300EDE74C /* CashRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterTests.swift; sourceTree = "<group>"; };
 		56C2578827EC0DA500EDE74C /* CashRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegister.swift; sourceTree = "<group>"; };
 		56CB9B4D27F163AE0093E322 /* FitNessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitNessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +139,7 @@
 		5651041827E2E3440003DE23 /* iOSSeniorDeveloper */ = {
 			isa = PBXGroup;
 			children = (
+				5685C45427F2FD360085DE67 /* Chapter04 */,
 				56CB9B6B27F171060093E322 /* Chapter03 */,
 				5651041927E2E3440003DE23 /* AppDelegate.swift */,
 				5651041B27E2E3440003DE23 /* SceneDelegate.swift */,
@@ -151,6 +164,7 @@
 		5682B95E27F2E60000097F5C /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				5685C45127F2FCE60085DE67 /* Data Model */,
 				5682B96227F2E65400097F5C /* AppModel */,
 				5682B96327F2E65A00097F5C /* UI Layer */,
 			);
@@ -167,6 +181,7 @@
 		5682B96027F2E61100097F5C /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				56AA382E27F4065100AB16EA /* ViewControllers.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -174,6 +189,7 @@
 		5682B96127F2E61A00097F5C /* Helper Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				56AA383027F406D200AB16EA /* RootViewController+Tests.swift */,
 			);
 			path = "Helper Extensions";
 			sourceTree = "<group>";
@@ -192,6 +208,24 @@
 				5682B95C27F2C2E900097F5C /* StepCountControllerTests.swift */,
 			);
 			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		5685C45127F2FCE60085DE67 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				5685C45227F2FD000085DE67 /* DataModelTests.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		5685C45427F2FD360085DE67 /* Chapter04 */ = {
+			isa = PBXGroup;
+			children = (
+				5685C45527F2FD400085DE67 /* DataModel.swift */,
+				56AA382B27F3FAA100AB16EA /* AppError.swift */,
+				561D991A27F40DCF0035B0E6 /* ChaseView.swift */,
+			);
+			path = Chapter04;
 			sourceTree = "<group>";
 		};
 		56CB9B4E27F163AE0093E322 /* FitNessTests */ = {
@@ -388,9 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5685C45627F2FD400085DE67 /* DataModel.swift in Sources */,
 				5651041E27E2E3440003DE23 /* ViewController.swift in Sources */,
 				5682B95A27F2C2DC00097F5C /* StepCountController.swift in Sources */,
 				5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */,
+				56AA382C27F3FAA100AB16EA /* AppError.swift in Sources */,
+				561D991B27F40DCF0035B0E6 /* ChaseView.swift in Sources */,
 				5682B96527F2E98000097F5C /* AppState.swift in Sources */,
 				5682B96427F2E91D00097F5C /* AppModel.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
@@ -418,7 +455,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56AA383127F406D200AB16EA /* RootViewController+Tests.swift in Sources */,
+				5685C45327F2FD000085DE67 /* DataModelTests.swift in Sources */,
 				5682B95D27F2C2E900097F5C /* StepCountControllerTests.swift in Sources */,
+				56AA382F27F4065100AB16EA /* ViewControllers.swift in Sources */,
 				56CB9B6527F166890093E322 /* AppModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

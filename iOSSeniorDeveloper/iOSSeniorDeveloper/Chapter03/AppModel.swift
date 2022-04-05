@@ -9,8 +9,18 @@ import Foundation
 
 class AppModel {
     static let instance = AppModel()
+    let dataModel = DataModel()
     var appState: AppState = .notStarted // public
-    func start() { // public
+    
+    func start() throws { // public
+        guard dataModel.goal != nil else {
+          throw AppError.goalNotSet
+        }
+        
         appState = .inProgress
+    }
+    
+    func restart() {
+      appState = .notStarted
     }
 }

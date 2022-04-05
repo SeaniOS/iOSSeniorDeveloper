@@ -27,12 +27,44 @@ class AppModelTests: XCTestCase {
         XCTAssertEqual(initialState, AppState.notStarted)
     }
     
+    func testModelWithNoGoal_whenStarted_throwsError() {
+      XCTAssertThrowsError(try sut.start())
+    }
+    
+    func testStart_withGoalSet_doesNotThrow() {
+        // given
+        givenGoalSet()
+        // then
+        XCTAssertNoThrow(try sut.start())
+    }
+    
     func testAppModel_whenStarted_isInInProgressState() {
-        // 1 given app in not starteds
+        // given
+        givenGoalSet()
         // 2 when started
-        sut.start()
+        try? sut.start()
         // 3 then it is in inProgress
         let observedState = sut.appState
         XCTAssertEqual(observedState, AppState.inProgress)
+    }
+    
+    // MARK: - Restart
+    func testAppModel_whenReset_isInNotStartedState() {
+        // given
+        givenInProgress()
+        // when
+        sut.restart()
+        // then
+        XCTAssertEqual(sut.appState, .notStarted)
+    }
+    
+    // MARK: - Given:
+    func givenGoalSet() {
+      sut.dataModel.goal = 1000
+    }
+    
+    func givenInProgress() {
+      givenGoalSet()
+      try! sut.start()
     }
 }
