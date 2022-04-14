@@ -20,6 +20,10 @@ enum AppState {
             return "Start"
         case .inProgress:
             return "Pause"
+        case .caught:
+            return "Try Again"
+        case .completed:
+            return "Start Over"
         default:
             return ""
         }

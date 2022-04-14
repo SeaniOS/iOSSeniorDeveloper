@@ -8,7 +8,7 @@
 import UIKit
 @testable import iOSSeniorDeveloper
 
-func loadRootViewController() -> StepCountController { // RootViewController
+func loadRootViewController() -> RootViewController {
     let window = UIApplication.shared.windows[0]
-    return window.rootViewController as! StepCountController
+    return window.rootViewController as! RootViewController
 }

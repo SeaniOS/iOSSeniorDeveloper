@@ -13,12 +13,11 @@ class StepCountControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        /*
+        
         let rootController = loadRootViewController()
         sut = rootController.stepController
-        */
+        
         // sut.loadViewIfNeeded()
-        sut = loadRootViewController()
     }
     
     override func tearDown() {
@@ -54,16 +53,6 @@ class StepCountControllerTests: XCTestCase {
         XCTAssertEqual(state, AppState.inProgress)
     }
     
-    // MARK: - Given:
-    func givenGoalSet() {
-        AppModel.instance.dataModel.goal = 1000
-    }
-    
-    func givenInProgress() {
-        givenGoalSet()
-        sut.startStopPause(nil)
-    }
-    
     // MARK: - Goal:
     func testDataModel_whenGoalUpdate_updatesToNewGoal() {
         // when
@@ -86,4 +75,63 @@ class StepCountControllerTests: XCTestCase {
         let chaseView = sut.chaseView
         XCTAssertEqual(chaseView.state, AppState.inProgress)
     }
+
+    // MARK: - When:
+    func whenCaught() {
+        AppModel.instance.setToCaught()
+    }
+    
+    func whenCompleted() {
+        AppModel.instance.setToComplete()
+    }
 }
+
+// MARK: - Given:
+extension StepCountControllerTests {
+    func givenGoalSet() {
+        AppModel.instance.dataModel.goal = 1000
+    }
+    
+    func givenInProgress() {
+        givenGoalSet()
+        sut.startStopPause(nil)
+    }
+    
+    func expectTextChange() -> XCTestExpectation {
+        return keyValueObservingExpectation(for: sut.startButton,
+                                               keyPath: "titleLabel.text")
+    }
+}
+/*
+// MARK: - Terminal States
+extension StepCountControllerTests {
+    func testController_whenCaught_buttonLabelIsTryAgain() {
+        // given
+        givenInProgress()
+        // let exp = expectation(description: "button title change")
+        // let observer = ButtonObserver()
+        // observer.observe(sut.startButton, expectation: exp)
+        let exp = expectTextChange()
+        // when
+        whenCaught()
+        // then
+        // waitForExpectations(timeout: 1)
+        wait(for: [exp], timeout: 1)
+        let text = sut.startButton.title(for: .normal)
+        XCTAssertEqual(text, AppState.caught.nextStateButtonLabel)
+    }
+    func testController_whenComplete_buttonLabelIsStartOver() {
+        // given
+        givenInProgress()
+        let exp = expectation(description: "button title change")
+        let observer = ButtonObserver()
+        observer.observe(sut.startButton, expectation: exp)
+        // when
+        whenCompleted()
+        // then
+        waitForExpectations(timeout: 1)
+        let text = sut.startButton.title(for: .normal)
+        XCTAssertEqual(text, AppState.completed.nextStateButtonLabel)
+    }
+}
+*/

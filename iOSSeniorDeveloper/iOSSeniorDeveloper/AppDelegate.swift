@@ -7,6 +7,8 @@
 
 import UIKit
 
+// XCTKVOExpectation & XCTNSPredicateExpectation
+// Quick+Nimble
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

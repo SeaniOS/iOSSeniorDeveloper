@@ -9,12 +9,20 @@ import UIKit
 
 class StepCountController: UIViewController {
     var startButton = UIButton()
+    // @IBOutlet weak var startButton: UIButton!
     var chaseView = ChaseView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackgroundColor()
         setupStartButton()
+        
+        AppModel.instance.stateChangedCallback = { model in
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        }
     }
     
     func updateGoal(newGoal: Int) {
@@ -25,7 +33,7 @@ class StepCountController: UIViewController {
 // MARK: - Setup
 extension StepCountController {
     private func setupBackgroundColor() {
-        view.backgroundColor = .systemBlue
+        // view.backgroundColor = .systemBlue
     }
     
     private func setupStartButton() {
@@ -56,6 +64,9 @@ extension StepCountController {
 // MARK: - Action
 extension StepCountController {
     @objc func startStopPause(_ sender: Any?) { // @IBAction
+        // let alert = Alert("Test Alert")
+        // AlertCenter.instance.postAlert(alert: alert)
+        AppModel.instance.dataModel.goal = 10
         do {
             try AppModel.instance.start()
         } catch {
