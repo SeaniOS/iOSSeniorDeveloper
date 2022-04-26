@@ -16,6 +16,8 @@
 		5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */; };
 		5651043B27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */; };
 		5651043D27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */; };
+		56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1002817CAC90016E73C /* firstDuplicate.swift */; };
+		56A3F1032817CBF70016E73C /* ArraysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1022817CBF70016E73C /* ArraysTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5651043627E2E3450003DE23 /* iOSSeniorDeveloperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSeniorDeveloperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITests.swift; sourceTree = "<group>"; };
 		5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56A3F1002817CAC90016E73C /* firstDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstDuplicate.swift; sourceTree = "<group>"; };
+		56A3F1022817CBF70016E73C /* ArraysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		5651041827E2E3440003DE23 /* iOSSeniorDeveloper */ = {
 			isa = PBXGroup;
 			children = (
+				56A3F0FE2817CA960016E73C /* DataStructures */,
 				5651041927E2E3440003DE23 /* AppDelegate.swift */,
 				5651041B27E2E3440003DE23 /* SceneDelegate.swift */,
 				5651041D27E2E3440003DE23 /* ViewController.swift */,
@@ -113,6 +118,7 @@
 		5651042F27E2E3450003DE23 /* iOSSeniorDeveloperTests */ = {
 			isa = PBXGroup;
 			children = (
+				56A3F1022817CBF70016E73C /* ArraysTests.swift */,
 				5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */,
 			);
 			path = iOSSeniorDeveloperTests;
@@ -125,6 +131,22 @@
 				5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */,
 			);
 			path = iOSSeniorDeveloperUITests;
+			sourceTree = "<group>";
+		};
+		56A3F0FE2817CA960016E73C /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				56A3F0FF2817CAB10016E73C /* Arrays */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		56A3F0FF2817CAB10016E73C /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				56A3F1002817CAC90016E73C /* firstDuplicate.swift */,
+			);
+			path = Arrays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +282,7 @@
 			files = (
 				5651041E27E2E3440003DE23 /* ViewController.swift in Sources */,
 				5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */,
+				56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */,
+				56A3F1032817CBF70016E73C /* ArraysTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
