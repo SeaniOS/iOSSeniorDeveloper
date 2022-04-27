@@ -17,6 +17,7 @@ class FirstDuplicate {
     /// let a: [Int] = [2, 1, 3, 5, 3, 2]
     ///
     /// XCTAssertEqual(result, 3)
+    ///
     func solution(a: [Int]) -> Int {
         var minIndex = -1
         
@@ -43,52 +44,74 @@ class FirstDuplicate {
         
         return count >= 2 ? occurrenceIndex : nil
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-// 1 ≤ a[i] ≤ a.length => Giá trị của phần tử - 1 = index của mảng
-func solution(a: [Int]) -> Int {
-    var a = a
-    for index in 0..<a.count {
-        let value = abs(a[index])
-        a[value - 1] = -a[value - 1]
-        if a[value - 1] > 0 { return value }
+    
+    func betterSolution(a: [Int]) -> Int {
+        var checkArray = Array.init(repeating: 0, count: a.count)
+        
+        for index in 0..<a.count {
+            let number = a[index]
+            if checkArray[number-1] == 1 {
+                return number
+            }
+            
+            checkArray[number-1] += 1
+        }
+        
+        return -1
     }
-    return -1
+    
+    func secondVoteSolution(a: [Int]) -> Int {
+        var a = a
+        for index in 0..<a.count {
+            let value = abs(a[index])
+            a[value - 1] = -a[value - 1]
+            if a[value - 1] > 0 { return value }
+        }
+        return -1
+    }
+    
+    func highestVoteSolution(a: [Int]) -> Int {
+        var set:Set<Int> = Set()
+        for i in a {
+            if(set.contains(i)) {
+                return i;
+            } else {
+                set.insert(i);
+            }
+        }
+        return -1;
+    }
 }
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

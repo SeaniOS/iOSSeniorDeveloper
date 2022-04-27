@@ -19,9 +19,9 @@ class ArraysTests: XCTestCase {
     }
     
     func testFirstDuplicate() {
-        XCTAssertEqual(FirstDuplicate.shared.solution(a: [2, 1, 3, 5, 3, 2]), 3)
-        XCTAssertEqual(FirstDuplicate.shared.solution(a: [2, 2]), 2)
-        XCTAssertEqual(FirstDuplicate.shared.solution(a: [2, 4, 3, 5, 1]), -1)
+        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 1, 3, 5, 3, 2]), 3)
+        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 2]), 2)
+        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 4, 3, 5, 1]), -1)
     }
 
     func testExample() throws {
