@@ -19,24 +19,14 @@ class ArraysTests: XCTestCase {
     }
     
     func testFirstDuplicate() {
-        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 1, 3, 5, 3, 2]), 3)
-        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 2]), 2)
-        XCTAssertEqual(FirstDuplicate.shared.betterSolution(a: [2, 4, 3, 5, 1]), -1)
+        XCTAssertEqual(3, FirstDuplicate.shared.betterSolution(a: [2, 1, 3, 5, 3, 2]))
+        XCTAssertEqual(2, FirstDuplicate.shared.betterSolution(a: [2, 2]))
+        XCTAssertEqual(-1, FirstDuplicate.shared.betterSolution(a: [2, 4, 3, 5, 1]))
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFirstNotRepeatingCharacter() {
+        XCTAssertEqual("c", FirstNotRepeatingCharacter.shared.solution(s: "abacabad"))
+        XCTAssertEqual("_", FirstNotRepeatingCharacter.shared.solution(s: "abacabaabacaba"))
     }
 
 }
