@@ -19,6 +19,7 @@
 		86265EC228264B9000C40693 /* firstNotRepeatingCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */; };
 		86265EC528264F2B00C40693 /* myPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC428264F2B00C40693 /* myPrint.swift */; };
 		86265EC82826527200C40693 /* extensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC72826527200C40693 /* extensionString.swift */; };
+		86265ECA28279C0300C40693 /* rotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC928279C0300C40693 /* rotateImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstNotRepeatingCharacter.swift; sourceTree = "<group>"; };
 		86265EC428264F2B00C40693 /* myPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPrint.swift; sourceTree = "<group>"; };
 		86265EC72826527200C40693 /* extensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionString.swift; sourceTree = "<group>"; };
+		86265EC928279C0300C40693 /* rotateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotateImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				56A3F1002817CAC90016E73C /* firstDuplicate.swift */,
 				86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */,
+				86265EC928279C0300C40693 /* rotateImage.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */,
 				56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
+				86265ECA28279C0300C40693 /* rotateImage.swift in Sources */,
 				86265EC82826527200C40693 /* extensionString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

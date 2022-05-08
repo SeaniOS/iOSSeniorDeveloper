@@ -28,5 +28,18 @@ class ArraysTests: XCTestCase {
         XCTAssertEqual("c", FirstNotRepeatingCharacter.shared.solution(s: "abacabad"))
         XCTAssertEqual("_", FirstNotRepeatingCharacter.shared.solution(s: "abacabaabacaba"))
     }
-
+    
+    func testRotateImage() {
+        let input = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        let output = [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+        XCTAssertEqual(output, RotateImage.shared.solution(a: input))
+    }
 }
