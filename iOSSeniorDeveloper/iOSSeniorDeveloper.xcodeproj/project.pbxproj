@@ -16,6 +16,7 @@
 		5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */; };
 		56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1002817CAC90016E73C /* firstDuplicate.swift */; };
 		56A3F1032817CBF70016E73C /* ArraysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1022817CBF70016E73C /* ArraysTests.swift */; };
+		56F3528C282BBE7800E9CC4F /* isCryptSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3528B282BBE7800E9CC4F /* isCryptSolution.swift */; };
 		56F3BE2B282A0FE300975D8F /* sudoku2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3BE2A282A0FE300975D8F /* sudoku2.swift */; };
 		86265EC228264B9000C40693 /* firstNotRepeatingCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */; };
 		86265EC528264F2B00C40693 /* myPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC428264F2B00C40693 /* myPrint.swift */; };
@@ -46,6 +47,7 @@
 		5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperTests.swift; sourceTree = "<group>"; };
 		56A3F1002817CAC90016E73C /* firstDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstDuplicate.swift; sourceTree = "<group>"; };
 		56A3F1022817CBF70016E73C /* ArraysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysTests.swift; sourceTree = "<group>"; };
+		56F3528B282BBE7800E9CC4F /* isCryptSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isCryptSolution.swift; sourceTree = "<group>"; };
 		56F3BE2A282A0FE300975D8F /* sudoku2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sudoku2.swift; sourceTree = "<group>"; };
 		86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstNotRepeatingCharacter.swift; sourceTree = "<group>"; };
 		86265EC428264F2B00C40693 /* myPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPrint.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */,
 				86265EC928279C0300C40693 /* rotateImage.swift */,
 				56F3BE2A282A0FE300975D8F /* sudoku2.swift */,
+				56F3528B282BBE7800E9CC4F /* isCryptSolution.swift */,
 			);
 			path = Arrays;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
 				86265ECA28279C0300C40693 /* rotateImage.swift in Sources */,
+				56F3528C282BBE7800E9CC4F /* isCryptSolution.swift in Sources */,
 				56F3BE2B282A0FE300975D8F /* sudoku2.swift in Sources */,
 				86265EC82826527200C40693 /* extensionString.swift in Sources */,
 			);

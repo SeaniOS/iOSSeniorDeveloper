@@ -68,4 +68,29 @@ class ArraysTests: XCTestCase {
             [".", "2", ".", ".", "3", ".", ".", ".", "."]]
         XCTAssertFalse(Sudoku2.shared.solution(grid: grid02))
     }
+    
+    func testIsCryptSolution() {
+        let crypt: [String] = ["SEND", "MORE", "MONEY"]
+        let solution: [[Character]] = [
+            ["O", "0"],
+            ["M", "1"],
+            ["Y", "2"],
+            ["E", "5"],
+            ["N", "6"],
+            ["D", "7"],
+            ["R", "8"],
+            ["S", "9"]
+        ]
+        XCTAssertTrue(IsCryptSolution.shared.solution(crypt: crypt, solution: solution))
+        
+        let crypt002: [String] = ["TEN", "TWO", "ONE"]
+        let solution002: [[Character]] = [
+            ["O", "1"],
+            ["T", "0"],
+            ["W", "9"],
+            ["E", "5"],
+            ["N", "4"]
+        ]
+        XCTAssertFalse(IsCryptSolution.shared.solution(crypt: crypt002, solution: solution002))
+    }
 }
