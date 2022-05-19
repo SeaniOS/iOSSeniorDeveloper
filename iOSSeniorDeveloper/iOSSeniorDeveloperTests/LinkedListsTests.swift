@@ -20,6 +20,13 @@ class LinkedListsTests: XCTestCase {
                        getArray(RemoveKFromList.shared.solution(l: getListNode([1000, 1000]), k: 1000)))
     }
     
+    func testIsListPalindrome() {
+        XCTAssertTrue(IsListPalindrome.shared.solution(l: getListNode([0, 1, 0])))
+        XCTAssertFalse(IsListPalindrome.shared.solution(l: getListNode([1, 2, 2, 3])))
+    }
+}
+
+extension LinkedListsTests {
     func getListNode(_ array: [Int]) -> ListNode<Int>? {
         guard array.count > 0 else { return nil }
         let firstNode = ListNode(array[0])
