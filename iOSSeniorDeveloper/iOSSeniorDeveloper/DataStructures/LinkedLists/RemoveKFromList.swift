@@ -45,7 +45,6 @@ class RemoveKFromList: LinkedList {
                 
                 // last node
                 if nextNode.next == nil { return headNode }
-                currentNode = nextNode.next!
             } else {
                 currentNode = nextNode
             }
@@ -61,5 +60,19 @@ class RemoveKFromList: LinkedList {
         } else {
             return l
         }
+    }
+}
+
+extension RemoveKFromList {
+    func highestVoteSolution(l: ListNode<Int>?, k: Int) -> ListNode<Int>? {
+        var node = l
+        while node != nil && node?.next != nil {
+            if node?.next?.value == k {
+                node?.next = node?.next?.next
+            } else {
+                node = node?.next
+            }
+        }
+        return l?.value == k ? l?.next : l
     }
 }
