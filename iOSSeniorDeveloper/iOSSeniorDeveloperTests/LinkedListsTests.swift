@@ -21,8 +21,8 @@ class LinkedListsTests: XCTestCase {
     }
     
     func testIsListPalindrome() {
-        XCTAssertTrue(IsListPalindrome.shared.solution(l: getListNode([0, 1, 0])))
-        XCTAssertFalse(IsListPalindrome.shared.solution(l: getListNode([1, 2, 2, 3])))
+        XCTAssertTrue(IsListPalindrome.shared.highestVoteSolution(l: getListNode([0, 1, 0])))
+        XCTAssertFalse(IsListPalindrome.shared.highestVoteSolution(l: getListNode([1, 2, 2, 3])))
     }
 }
 
