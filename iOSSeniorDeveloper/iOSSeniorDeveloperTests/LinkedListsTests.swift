@@ -24,35 +24,18 @@ class LinkedListsTests: XCTestCase {
         XCTAssertTrue(IsListPalindrome.shared.highestVoteSolution(l: getListNode([0, 1, 0])))
         XCTAssertFalse(IsListPalindrome.shared.highestVoteSolution(l: getListNode([1, 2, 2, 3])))
     }
-}
-
-extension LinkedListsTests {
-    func getListNode(_ array: [Int]) -> ListNode<Int>? {
-        guard array.count > 0 else { return nil }
-        let firstNode = ListNode(array[0])
-        var lastNode = firstNode
-        
-        guard array.count > 1 else { return firstNode }
-        for index in 1..<array.count {
-            let node = ListNode(array[index])
-            lastNode.next = node
-            
-            lastNode = node
-        }
-        return firstNode
-    }
     
-    func getArray(_ listNode: ListNode<Int>?) -> [Int] {
-        guard let listNode = listNode else { return [] }
-        var array = [Int]()
-        array.append(listNode.value)
-        var currentNode = listNode
+    func testAddTwoHugeNumbers() {
+        XCTAssertEqual(getArray(getListNode([9876, 5434, 0])),
+                       getArray(AddTwoHugeNumbers.shared.solution(a: getListNode([9876, 5432, 1999]),
+                                                                  b: getListNode([1, 8001]))))
         
-        while currentNode.next != nil {
-            let nextNode = currentNode.next!
-            array.append(nextNode.value)
-            currentNode = nextNode
-        }
-        return array
+        XCTAssertEqual(getArray(getListNode([223, 104, 105])),
+                       getArray(AddTwoHugeNumbers.shared.solution(a: getListNode([123, 4, 5]),
+                                                                  b: getListNode([100, 100, 100]))))
+        
+        XCTAssertEqual(getArray(getListNode([1, 0, 0, 0, 0, 0, 0])),
+                       getArray(AddTwoHugeNumbers.shared.solution(a: getListNode([1]),
+                                                                  b: getListNode([9999, 9999, 9999, 9999, 9999, 9999]))))
     }
 }

@@ -19,6 +19,8 @@
 		56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1002817CAC90016E73C /* firstDuplicate.swift */; };
 		56A3F1032817CBF70016E73C /* ArraysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1022817CBF70016E73C /* ArraysTests.swift */; };
 		56C07BF1283647D400CDD2B9 /* IsListPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */; };
+		56C07BF32837347200CDD2B9 /* AddTwoHugeNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C07BF22837347200CDD2B9 /* AddTwoHugeNumbers.swift */; };
+		56C07BF528373A9900CDD2B9 /* LinkedListUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C07BF428373A9900CDD2B9 /* LinkedListUtility.swift */; };
 		56F3528C282BBE7800E9CC4F /* isCryptSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3528B282BBE7800E9CC4F /* isCryptSolution.swift */; };
 		56F3BE2B282A0FE300975D8F /* sudoku2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3BE2A282A0FE300975D8F /* sudoku2.swift */; };
 		86265EC228264B9000C40693 /* firstNotRepeatingCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */; };
@@ -53,6 +55,8 @@
 		56A3F1002817CAC90016E73C /* firstDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstDuplicate.swift; sourceTree = "<group>"; };
 		56A3F1022817CBF70016E73C /* ArraysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysTests.swift; sourceTree = "<group>"; };
 		56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsListPalindrome.swift; sourceTree = "<group>"; };
+		56C07BF22837347200CDD2B9 /* AddTwoHugeNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwoHugeNumbers.swift; sourceTree = "<group>"; };
+		56C07BF428373A9900CDD2B9 /* LinkedListUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListUtility.swift; sourceTree = "<group>"; };
 		56F3528B282BBE7800E9CC4F /* isCryptSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isCryptSolution.swift; sourceTree = "<group>"; };
 		56F3BE2A282A0FE300975D8F /* sudoku2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sudoku2.swift; sourceTree = "<group>"; };
 		86265EC128264B9000C40693 /* firstNotRepeatingCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstNotRepeatingCharacter.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			children = (
 				560717BD2835EF860028A3BF /* RemoveKFromList.swift */,
 				56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */,
+				56C07BF22837347200CDD2B9 /* AddTwoHugeNumbers.swift */,
 			);
 			path = LinkedLists;
 			sourceTree = "<group>";
@@ -109,7 +114,8 @@
 		5651041827E2E3440003DE23 /* iOSSeniorDeveloper */ = {
 			isa = PBXGroup;
 			children = (
-				86265EC62826526400C40693 /* Extension */,
+				56C07BF628373AAE00CDD2B9 /* Structures */,
+				86265EC62826526400C40693 /* Extensions */,
 				86265EC328264F1F00C40693 /* Utilities */,
 				56A3F0FE2817CA960016E73C /* DataStructures */,
 				5651041927E2E3440003DE23 /* AppDelegate.swift */,
@@ -154,20 +160,28 @@
 			path = Arrays;
 			sourceTree = "<group>";
 		};
+		56C07BF628373AAE00CDD2B9 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		86265EC328264F1F00C40693 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				86265EC428264F2B00C40693 /* myPrint.swift */,
+				56C07BF428373A9900CDD2B9 /* LinkedListUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		86265EC62826526400C40693 /* Extension */ = {
+		86265EC62826526400C40693 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				86265EC72826527200C40693 /* extensionString.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C07BF32837347200CDD2B9 /* AddTwoHugeNumbers.swift in Sources */,
 				560717BE2835EF860028A3BF /* RemoveKFromList.swift in Sources */,
 				86265EC228264B9000C40693 /* firstNotRepeatingCharacter.swift in Sources */,
 				86265EC528264F2B00C40693 /* myPrint.swift in Sources */,
@@ -279,6 +294,7 @@
 				5651041A27E2E3440003DE23 /* AppDelegate.swift in Sources */,
 				56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
+				56C07BF528373A9900CDD2B9 /* LinkedListUtility.swift in Sources */,
 				86265ECA28279C0300C40693 /* rotateImage.swift in Sources */,
 				56F3528C282BBE7800E9CC4F /* isCryptSolution.swift in Sources */,
 				56F3BE2B282A0FE300975D8F /* sudoku2.swift in Sources */,

@@ -11,18 +11,6 @@ protocol LinkedList {
     
 }
 
- // Singly-linked lists are already defined with this interface:
-class ListNode<T> {
-     var value: T
-     var next: ListNode<T>?
-     
-     init(_ x: T) {
-         self.value = x
-         self.next = nil
-     }
- }
-
-
 // https://app.codesignal.com/interview-practice/task/gX7NXPBrYThXZuanm/description
 class RemoveKFromList: LinkedList {
     static let shared = RemoveKFromList()
