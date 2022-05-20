@@ -16,6 +16,7 @@
 		5651042327E2E3450003DE23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5651042227E2E3450003DE23 /* Assets.xcassets */; };
 		5651042627E2E3450003DE23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5651042427E2E3450003DE23 /* LaunchScreen.storyboard */; };
 		5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */; };
+		566A411E283755EB00144F7A /* MergeTwoLinkedLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A411D283755EB00144F7A /* MergeTwoLinkedLists.swift */; };
 		56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1002817CAC90016E73C /* firstDuplicate.swift */; };
 		56A3F1032817CBF70016E73C /* ArraysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3F1022817CBF70016E73C /* ArraysTests.swift */; };
 		56C07BF1283647D400CDD2B9 /* IsListPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */; };
@@ -52,6 +53,7 @@
 		5651042727E2E3450003DE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5651042C27E2E3450003DE23 /* iOSSeniorDeveloperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSeniorDeveloperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperTests.swift; sourceTree = "<group>"; };
+		566A411D283755EB00144F7A /* MergeTwoLinkedLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeTwoLinkedLists.swift; sourceTree = "<group>"; };
 		56A3F1002817CAC90016E73C /* firstDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstDuplicate.swift; sourceTree = "<group>"; };
 		56A3F1022817CBF70016E73C /* ArraysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysTests.swift; sourceTree = "<group>"; };
 		56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsListPalindrome.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				560717BD2835EF860028A3BF /* RemoveKFromList.swift */,
 				56C07BF0283647D400CDD2B9 /* IsListPalindrome.swift */,
 				56C07BF22837347200CDD2B9 /* AddTwoHugeNumbers.swift */,
+				566A411D283755EB00144F7A /* MergeTwoLinkedLists.swift */,
 			);
 			path = LinkedLists;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				56A3F1012817CAC90016E73C /* firstDuplicate.swift in Sources */,
 				5651041C27E2E3440003DE23 /* SceneDelegate.swift in Sources */,
 				56C07BF528373A9900CDD2B9 /* LinkedListUtility.swift in Sources */,
+				566A411E283755EB00144F7A /* MergeTwoLinkedLists.swift in Sources */,
 				86265ECA28279C0300C40693 /* rotateImage.swift in Sources */,
 				56F3528C282BBE7800E9CC4F /* isCryptSolution.swift in Sources */,
 				56F3BE2B282A0FE300975D8F /* sudoku2.swift in Sources */,

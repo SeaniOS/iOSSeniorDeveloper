@@ -38,4 +38,17 @@ class LinkedListsTests: XCTestCase {
                        getArray(AddTwoHugeNumbers.shared.solution(a: getListNode([1]),
                                                                   b: getListNode([9999, 9999, 9999, 9999, 9999, 9999]))))
     }
+    
+    func testMergeTwoLinkedLists() {
+        XCTAssertEqual(getArray(getListNode([1, 2, 3, 4, 5, 6])),
+                       getArray(MergeTwoLinkedLists.shared.solution(l1: getListNode([1, 2, 3]),
+                                                                    l2: getListNode([4, 5, 6]))))
+        XCTAssertEqual(getArray(getListNode([0, 1, 1, 2, 3, 4, 5])),
+                       getArray(MergeTwoLinkedLists.shared.solution(l1: getListNode([1, 1, 2, 4]),
+                                                                    l2: getListNode([0, 3, 5]))))
+
+        XCTAssertEqual(getArray(getListNode([-1, -1, -1, 0, 0, 0, 1, 1, 1])),
+                       getArray(MergeTwoLinkedLists.shared.solution(l1: getListNode([-1, -1, 0, 1]),
+                                                                    l2: getListNode([-1, 0, 0, 1, 1]))))
+    }
 }
