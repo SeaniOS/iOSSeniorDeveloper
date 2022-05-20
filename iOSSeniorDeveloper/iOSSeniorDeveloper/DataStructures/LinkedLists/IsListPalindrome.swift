@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/HmNvEkfFShPhREMn4/description
-class IsListPalindrome: LinkedList {
+class IsListPalindrome: LinkedLists {
     static let shared = IsListPalindrome()
     private init() {}
     

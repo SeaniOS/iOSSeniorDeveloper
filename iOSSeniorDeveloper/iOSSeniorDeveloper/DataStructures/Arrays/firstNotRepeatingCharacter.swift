@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/uX5iLwhc6L5ckSyNC/description
-class FirstNotRepeatingCharacter {
+class FirstNotRepeatingCharacter: Arrays {
     static let shared = FirstNotRepeatingCharacter()
     private init() {}
     

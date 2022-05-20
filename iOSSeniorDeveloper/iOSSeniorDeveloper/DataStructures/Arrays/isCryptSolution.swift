@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/yM4uWYeQTHzYewW9H/description
-class IsCryptSolution {
+class IsCryptSolution: Arrays {
     static let shared = IsCryptSolution()
     private init() {}
     /*

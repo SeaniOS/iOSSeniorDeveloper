@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol LinkedList {
+protocol LinkedLists {
     
 }
 
 // https://app.codesignal.com/interview-practice/task/gX7NXPBrYThXZuanm/description
-class RemoveKFromList: LinkedList {
+class RemoveKFromList: LinkedLists {
     static let shared = RemoveKFromList()
     private init() {}
     

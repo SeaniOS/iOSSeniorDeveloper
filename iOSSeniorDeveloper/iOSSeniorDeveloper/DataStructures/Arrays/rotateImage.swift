@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/5A8jwLGcEpTPyyjTB/description
-class RotateImage {
+class RotateImage: Arrays {
     static let shared = RotateImage()
     private init() {}
     

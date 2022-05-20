@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/SKZ45AF99NpbnvgTn/description
-class Sudoku2 {
+class Sudoku2: Arrays {
     static let shared = Sudoku2()
     private init() {}
     

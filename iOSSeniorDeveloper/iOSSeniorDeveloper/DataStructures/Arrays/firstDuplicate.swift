@@ -7,8 +7,12 @@
 
 import Foundation
 
+protocol Arrays {
+    
+}
+
 /// https://app.codesignal.com/interview-practice/task/pMvymcahZ8dY4g75q/description
-class FirstDuplicate {
+class FirstDuplicate: Arrays {
     static let shared = FirstDuplicate()
     private init() {}
     

@@ -8,7 +8,7 @@
 import Foundation
 
 // https://app.codesignal.com/interview-practice/task/RvDFbsNC3Xn7pnQfH/description
-class AddTwoHugeNumbers {
+class AddTwoHugeNumbers: LinkedLists {
     static let shared = AddTwoHugeNumbers()
     private init() {}
     
@@ -49,5 +49,62 @@ class AddTwoHugeNumbers {
             return node
         }
         return previousNode
+    }
+}
+
+extension AddTwoHugeNumbers {
+    func highestVoteSolution(a: ListNode<Int>?, b: ListNode<Int>?) -> ListNode<Int>? {
+        var aCurrent = reverseList(a)
+        var bCurrent = reverseList(b)
+        
+        var newList: ListNode<Int>? = nil
+        var carry = 0
+        
+        while aCurrent != nil || bCurrent != nil {
+            var newVal = 0
+            newVal += aCurrent?.value ?? 0
+            newVal += bCurrent?.value ?? 0
+            
+            if carry == 1 {
+                newVal += 1
+                carry = 0
+            }
+            
+            if newVal >= 10000 {
+                carry = 1
+                newVal -= 10000
+            }
+            
+            let newNode = ListNode<Int>(newVal)
+            
+            newNode.next = newList
+            newList = newNode
+            
+            aCurrent = aCurrent?.next
+            bCurrent = bCurrent?.next
+        }
+        
+        if carry == 1 {
+            let newNode = ListNode<Int>(1)
+            newNode.next = newList
+            newList = newNode
+        }
+        
+        return newList
+    }
+
+    private func reverseList(_ list: ListNode<Int>?) -> ListNode<Int>? {
+        var current = list
+        var next = current?.next
+        var prev: ListNode<Int>? = nil
+        
+        while current != nil {
+            current?.next = prev
+            prev = current
+            current = next
+            next = current?.next
+        }
+        
+        return prev
     }
 }
