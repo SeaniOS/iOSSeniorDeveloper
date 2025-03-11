@@ -33,21 +33,39 @@ struct FlightList: View {
     var flightToShow: FlightInformation?
     @State private var path: [FlightInformation] = []
     
+    var nextFlightId: Int {
+        guard let flight = flights.first(
+            where: {
+                $0.localTime >= Date()
+            }
+        ) else {
+            return flights.last?.id ?? 0
+        }
+        return flight.id
+    }
+    
     var body: some View {
-        ScrollView([.horizontal, .vertical]) {
-        // ScrollView {
-            LazyVStack {
-                ForEach(flights) { flight in
-                    NavigationLink(value: flight) {
-                        FlightRow(flight: flight)
+        ScrollViewReader { scrollProxy in // added ScrollViewReader
+            ScrollView([.horizontal, .vertical]) {
+                // ScrollView {
+                LazyVStack {
+                    ForEach(flights) { flight in
+                        NavigationLink(value: flight) {
+                            FlightRow(flight: flight)
+                        }
+                        // .id(<#T##id: Hashable##Hashable#>) // id modifier
                     }
+                    .navigationDestination(
+                        for: FlightInformation.self,
+                        destination: { flight in
+                            FlightDetails(flight: flight)
+                        }
+                    )
                 }
-                .navigationDestination(
-                    for: FlightInformation.self,
-                    destination: { flight in
-                        FlightDetails(flight: flight)
-                    }
-                )
+            }
+            .onAppear {
+                // scrollProxy.scrollTo(nextFlightId)
+                scrollProxy.scrollTo(nextFlightId, anchor: .center)
             }
         }
         .onAppear {
