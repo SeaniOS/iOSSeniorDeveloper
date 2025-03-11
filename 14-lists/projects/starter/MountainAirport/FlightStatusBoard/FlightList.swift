@@ -34,18 +34,21 @@ struct FlightList: View {
     @State private var path: [FlightInformation] = []
     
     var body: some View {
-        NavigationStack(path: $path) {
-            ForEach(flights, id: \.id) { flight in
-                NavigationLink(value: flight) {
-                    FlightRow(flight: flight)
+        ScrollView([.horizontal, .vertical]) {
+        // ScrollView {
+            VStack {
+                ForEach(flights, id: \.id) { flight in
+                    NavigationLink(value: flight) {
+                        FlightRow(flight: flight)
+                    }
                 }
+                .navigationDestination(
+                    for: FlightInformation.self,
+                    destination: { flight in
+                        FlightDetails(flight: flight)
+                    }
+                )
             }
-            .navigationDestination(
-                for: FlightInformation.self,
-                destination: { flight in
-                    FlightDetails(flight: flight)
-                }
-            )
         }
         .onAppear {
             if let flight = flightToShow {
