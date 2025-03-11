@@ -47,7 +47,7 @@ enum FlightStatus: String, CaseIterable {
 }
 
 class FlightInformation: NSObject {
-    var id: Int
+    var id: Int // Hashable
     var airline: String
     var number: String
     var otherAirport: String
@@ -214,4 +214,6 @@ class FlightInformation: NSObject {
     }
 }
 
+extension FlightInformation: Identifiable {
+}
 
