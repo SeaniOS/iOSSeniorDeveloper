@@ -36,7 +36,7 @@ struct FlightList: View {
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
         // ScrollView {
-            VStack {
+            LazyVStack {
                 ForEach(flights) { flight in
                     NavigationLink(value: flight) {
                         FlightRow(flight: flight)
