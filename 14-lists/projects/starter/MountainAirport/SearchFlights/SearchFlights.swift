@@ -51,7 +51,7 @@ struct SearchFlights: View {
         
         return matchingFlights
     }
-    
+    /*
     struct HierarchicalFlightRow: Identifiable {
         var label: String
         var flight: FlightInformation?
@@ -59,7 +59,8 @@ struct SearchFlights: View {
         
         var id = UUID()
     }
-    
+    */
+    /*
     func hierarchicalFlightRowFromFlight(_ flight: FlightInformation)
     -> HierarchicalFlightRow {
         return HierarchicalFlightRow(
@@ -68,7 +69,7 @@ struct SearchFlights: View {
             children: nil
         )
     }
-    
+    */
     var flightDates: [Date] {
         let allDates = matchingFlights.map { $0.localTime.dateOnly }
         let uniqueDates = Array(Set(allDates))
@@ -80,7 +81,7 @@ struct SearchFlights: View {
             Calendar.current.isDate($0.localTime, inSameDayAs: date)
         }
     }
-    
+    /*
     var hierarchicalFlights: [HierarchicalFlightRow] {
         // 1
         var rows: [HierarchicalFlightRow] = []
@@ -99,7 +100,7 @@ struct SearchFlights: View {
         }
         return rows
     }
-    
+    */
     var body: some View {
         ZStack {
             Image("background-view")
@@ -122,15 +123,39 @@ struct SearchFlights: View {
                     SearchResultRow(flight: flight)
                 }
                 */
-                // 1
+                /*
                 List(hierarchicalFlights, children: \.children) { row in // using children
-                    // 2
                     if let flight = row.flight {
                         SearchResultRow(flight: flight)
                     } else {
                         Text(row.label)
                     }
                 }
+                 */
+                // 1
+                List {
+                    // 2
+                    ForEach(flightDates, id: \.hashValue) { date in
+                        // 3
+                        Section(
+                            // 4
+                            header: Text(longDateFormatter.string(from: date)),
+                            // 5
+                            footer:
+                                Text(
+                                    "Matching flights " + "\(flightsForDay(date: date).count)"
+                                )
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        ) {
+                            // 6
+                            ForEach(flightsForDay(date: date)) { flight in
+                                SearchResultRow(flight: flight)
+                            }
+                        }
+                    }
+                }
+                // 7
+                .listStyle(InsetGroupedListStyle())
 
                 Spacer()
             }
