@@ -46,6 +46,7 @@ struct FlightList: View {
     
     var body: some View {
         ScrollViewReader { scrollProxy in // added ScrollViewReader
+            /*
             ScrollView([.horizontal, .vertical]) {
                 // ScrollView {
                 LazyVStack {
@@ -55,14 +56,20 @@ struct FlightList: View {
                         }
                         // .id(<#T##id: Hashable##Hashable#>) // id modifier
                     }
-                    .navigationDestination(
-                        for: FlightInformation.self,
-                        destination: { flight in
-                            FlightDetails(flight: flight)
-                        }
-                    )
                 }
             }
+            */
+            List(flights) { flight in // using List instead of ForEach (ScrollView, LazyVStack, ForEach)
+                NavigationLink(value: flight) {
+                    FlightRow(flight: flight)
+                }
+            }
+            .navigationDestination(
+                for: FlightInformation.self,
+                destination: { flight in
+                    FlightDetails(flight: flight)
+                }
+            )
             .onAppear {
                 // scrollProxy.scrollTo(nextFlightId)
                 scrollProxy.scrollTo(nextFlightId, anchor: .center)
