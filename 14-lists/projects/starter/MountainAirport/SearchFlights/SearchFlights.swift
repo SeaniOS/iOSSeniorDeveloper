@@ -33,7 +33,7 @@ struct SearchFlights: View {
     @State private var date = Date()
     @State private var directionFilter: FlightDirection = .none
     @State private var city = ""
-
+    
     var matchingFlights: [FlightInformation] {
         var matchingFlights = flightData
         
@@ -50,6 +50,54 @@ struct SearchFlights: View {
         }
         
         return matchingFlights
+    }
+    
+    struct HierarchicalFlightRow: Identifiable {
+        var label: String
+        var flight: FlightInformation?
+        var children: [HierarchicalFlightRow]?
+        
+        var id = UUID()
+    }
+    
+    func hierarchicalFlightRowFromFlight(_ flight: FlightInformation)
+    -> HierarchicalFlightRow {
+        return HierarchicalFlightRow(
+            label: longDateFormatter.string(from: flight.localTime),
+            flight: flight,
+            children: nil
+        )
+    }
+    
+    var flightDates: [Date] {
+        let allDates = matchingFlights.map { $0.localTime.dateOnly }
+        let uniqueDates = Array(Set(allDates))
+        return uniqueDates.sorted()
+    }
+    
+    func flightsForDay(date: Date) -> [FlightInformation] {
+        matchingFlights.filter {
+            Calendar.current.isDate($0.localTime, inSameDayAs: date)
+        }
+    }
+    
+    var hierarchicalFlights: [HierarchicalFlightRow] {
+        // 1
+        var rows: [HierarchicalFlightRow] = []
+        
+        // 2
+        for date in flightDates {
+            // 3
+            let newRow = HierarchicalFlightRow(
+                label: longDateFormatter.string(from: date),
+                // 4
+                children: flightsForDay(date: date).map {
+                    hierarchicalFlightRowFromFlight($0)
+                }
+            )
+            rows.append(newRow)
+        }
+        return rows
     }
     
     var body: some View {
@@ -69,9 +117,21 @@ struct SearchFlights: View {
                 .background(Color.white)
                 .pickerStyle(SegmentedPickerStyle())
                 // Insert Results
+                /*
                 List(matchingFlights) { flight in // SwiftUI always renders a List lazily
-                  SearchResultRow(flight: flight)
+                    SearchResultRow(flight: flight)
                 }
+                */
+                // 1
+                List(hierarchicalFlights, children: \.children) { row in // using children
+                    // 2
+                    if let flight = row.flight {
+                        SearchResultRow(flight: flight)
+                    } else {
+                        Text(row.label)
+                    }
+                }
+
                 Spacer()
             }
             .searchable(text: $city)
