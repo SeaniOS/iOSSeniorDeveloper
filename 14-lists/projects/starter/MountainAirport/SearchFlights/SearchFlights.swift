@@ -32,13 +32,20 @@ struct SearchFlights: View {
     var flightData: [FlightInformation]
     @State private var date = Date()
     @State private var directionFilter: FlightDirection = .none
-    
+    @State private var city = ""
+
     var matchingFlights: [FlightInformation] {
         var matchingFlights = flightData
         
         if directionFilter != .none {
             matchingFlights = matchingFlights.filter {
                 $0.direction == directionFilter
+            }
+        }
+        
+        if !city.isEmpty {
+            matchingFlights = matchingFlights.filter {
+                $0.otherAirport.lowercased().contains(city.lowercased())
             }
         }
         
@@ -62,8 +69,12 @@ struct SearchFlights: View {
                 .background(Color.white)
                 .pickerStyle(SegmentedPickerStyle())
                 // Insert Results
+                List(matchingFlights) { flight in // SwiftUI always renders a List lazily
+                  SearchResultRow(flight: flight)
+                }
                 Spacer()
             }
+            .searchable(text: $city)
             .navigationBarTitle("Search Flights")
             .padding()
         }
