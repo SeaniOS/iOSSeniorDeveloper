@@ -6,3 +6,8 @@ Chapter 14: Lists
 
 ![image](https://github.com/user-attachments/assets/645f1a5b-9b36-4d7b-b6e9-94f419247816)
 
+Chapter 15: Advanced Lists
+
+![image](https://github.com/user-attachments/assets/dd3abd74-e014-489a-84e0-a7743324d1de)
+
+
