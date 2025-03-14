@@ -45,59 +45,65 @@ struct FlightStatusBoard: View {
         let dateF = DateFormatter()
         dateF.timeStyle = .short
         dateF.dateFormat = .none
-        return "Last updated: \(dateF.string(from: Date()))"
+        return "Last updated: \(dateF.string(from: date))"
     }
     
     var body: some View {
-        VStack {
-            Text(lastUpdateString(Date()))
-                .font(.footnote)
-            TabView(selection: $selectedTab) {
-                FlightList(
-                    flights: shownFlights.filter { $0.direction == .arrival },
-                    highlightedIds: $highlightedIds
+        // TimelineView(.periodic(from: .now, by: 60.0)) { context in
+        // .explicit to specify exact times to update the view
+        // .animation to update the view at a specified frequency
+        // For more complex scenarios, you can implement a custom type that implements the TimelineSchedule protocol
+        TimelineView(.everyMinute) { context in
+            VStack {
+                Text(lastUpdateString(context.date))
+                    .font(.footnote)
+                TabView(selection: $selectedTab) {
+                    FlightList(
+                        flights: shownFlights.filter { $0.direction == .arrival },
+                        highlightedIds: $highlightedIds
+                    )
+                    .tabItem {
+                        Image("descending-airplane")
+                            .resizable()
+                        Text("Arrivals")
+                    }
+                    .tag(0)
+                    FlightList(
+                        flights: shownFlights,
+                        flightToShow: flightToShow,
+                        highlightedIds: $highlightedIds
+                    )
+                    .tabItem {
+                        Image(systemName: "airplane")
+                            .resizable()
+                        Text("All")
+                    }
+                    .tag(1)
+                    FlightList(
+                        flights: shownFlights.filter { $0.direction == .departure },
+                        highlightedIds: $highlightedIds
+                    )
+                    .tabItem {
+                        Image("ascending-airplane")
+                        Text("Departures")
+                    }
+                    .tag(2)
+                }
+                .onAppear {
+                    if flightToShow != nil {
+                        selectedTab = 1
+                    }
+                }
+                // 1
+                .refreshable {
+                    // 2
+                    await flights = FlightData.refreshFlights()
+                }
+                .navigationTitle("Today's Flight Status")
+                .navigationBarItems(
+                    trailing: Toggle("Hide Past", isOn: $hidePast)
                 )
-                .tabItem {
-                    Image("descending-airplane")
-                        .resizable()
-                    Text("Arrivals")
-                }
-                .tag(0)
-                FlightList(
-                    flights: shownFlights,
-                    flightToShow: flightToShow,
-                    highlightedIds: $highlightedIds
-                )
-                .tabItem {
-                    Image(systemName: "airplane")
-                        .resizable()
-                    Text("All")
-                }
-                .tag(1)
-                FlightList(
-                    flights: shownFlights.filter { $0.direction == .departure },
-                    highlightedIds: $highlightedIds
-                )
-                .tabItem {
-                    Image("ascending-airplane")
-                    Text("Departures")
-                }
-                .tag(2)
             }
-            .onAppear {
-                if flightToShow != nil {
-                    selectedTab = 1
-                }
-            }
-            // 1
-            .refreshable {
-                // 2
-                await flights = FlightData.refreshFlights()
-            }
-            .navigationTitle("Today's Flight Status")
-            .navigationBarItems(
-                trailing: Toggle("Hide Past", isOn: $hidePast)
-            )
         }
     }
 }
