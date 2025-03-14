@@ -29,10 +29,11 @@
 import SwiftUI
 
 struct SearchFlights: View {
-    var flightData: [FlightInformation]
+    @State var flightData: [FlightInformation]
     @State private var date = Date()
     @State private var directionFilter: FlightDirection = .none
     @State private var city = ""
+    @State private var runningSearch = false
     
     var matchingFlights: [FlightInformation] {
         var matchingFlights = flightData
@@ -42,34 +43,35 @@ struct SearchFlights: View {
                 $0.direction == directionFilter
             }
         }
-        
-        if !city.isEmpty {
-            matchingFlights = matchingFlights.filter {
-                $0.otherAirport.lowercased().contains(city.lowercased())
-            }
-        }
-        
+        /*
+         if !city.isEmpty {
+         matchingFlights = matchingFlights.filter {
+         $0.otherAirport.lowercased().contains(city.lowercased())
+         }
+         }
+         */
         return matchingFlights
     }
+    
     /*
-    struct HierarchicalFlightRow: Identifiable {
-        var label: String
-        var flight: FlightInformation?
-        var children: [HierarchicalFlightRow]?
-        
-        var id = UUID()
-    }
-    */
+     struct HierarchicalFlightRow: Identifiable {
+     var label: String
+     var flight: FlightInformation?
+     var children: [HierarchicalFlightRow]?
+     
+     var id = UUID()
+     }
+     */
     /*
-    func hierarchicalFlightRowFromFlight(_ flight: FlightInformation)
-    -> HierarchicalFlightRow {
-        return HierarchicalFlightRow(
-            label: longDateFormatter.string(from: flight.localTime),
-            flight: flight,
-            children: nil
-        )
-    }
-    */
+     func hierarchicalFlightRowFromFlight(_ flight: FlightInformation)
+     -> HierarchicalFlightRow {
+     return HierarchicalFlightRow(
+     label: longDateFormatter.string(from: flight.localTime),
+     flight: flight,
+     children: nil
+     )
+     }
+     */
     var flightDates: [Date] {
         let allDates = matchingFlights.map { $0.localTime.dateOnly }
         let uniqueDates = Array(Set(allDates))
@@ -82,25 +84,25 @@ struct SearchFlights: View {
         }
     }
     /*
-    var hierarchicalFlights: [HierarchicalFlightRow] {
-        // 1
-        var rows: [HierarchicalFlightRow] = []
-        
-        // 2
-        for date in flightDates {
-            // 3
-            let newRow = HierarchicalFlightRow(
-                label: longDateFormatter.string(from: date),
-                // 4
-                children: flightsForDay(date: date).map {
-                    hierarchicalFlightRowFromFlight($0)
-                }
-            )
-            rows.append(newRow)
-        }
-        return rows
-    }
-    */
+     var hierarchicalFlights: [HierarchicalFlightRow] {
+     // 1
+     var rows: [HierarchicalFlightRow] = []
+     
+     // 2
+     for date in flightDates {
+     // 3
+     let newRow = HierarchicalFlightRow(
+     label: longDateFormatter.string(from: date),
+     // 4
+     children: flightsForDay(date: date).map {
+     hierarchicalFlightRowFromFlight($0)
+     }
+     )
+     rows.append(newRow)
+     }
+     return rows
+     }
+     */
     var body: some View {
         ZStack {
             Image("background-view")
@@ -119,18 +121,18 @@ struct SearchFlights: View {
                 .pickerStyle(SegmentedPickerStyle())
                 // Insert Results
                 /*
-                List(matchingFlights) { flight in // SwiftUI always renders a List lazily
-                    SearchResultRow(flight: flight)
-                }
-                */
+                 List(matchingFlights) { flight in // SwiftUI always renders a List lazily
+                 SearchResultRow(flight: flight)
+                 }
+                 */
                 /*
-                List(hierarchicalFlights, children: \.children) { row in // using children
-                    if let flight = row.flight {
-                        SearchResultRow(flight: flight)
-                    } else {
-                        Text(row.label)
-                    }
-                }
+                 List(hierarchicalFlights, children: \.children) { row in // using children
+                 if let flight = row.flight {
+                 SearchResultRow(flight: flight)
+                 } else {
+                 Text(row.label)
+                 }
+                 }
                  */
                 // 1
                 List {
@@ -156,6 +158,21 @@ struct SearchFlights: View {
                 }
                 // 7
                 .listStyle(InsetGroupedListStyle())
+                .overlay(
+                    Group {
+                        if runningSearch {
+                            VStack {
+                                Text("Searching...")
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .tint(.black)
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(.gray)
+                            .opacity(0.8)
+                        }
+                    }
+                )
 
                 Spacer()
             }
@@ -165,6 +182,14 @@ struct SearchFlights: View {
                     Text(city).searchCompletion(city)
                 }
             }
+            .onSubmit(of: .search) {
+                Task {
+                    runningSearch = true
+                    await flightData = FlightData.searchFlightsForCity(city)
+                    runningSearch = false
+                }
+            }
+            
             .navigationBarTitle("Search Flights")
             .padding()
         }
