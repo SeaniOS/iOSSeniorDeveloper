@@ -16,6 +16,7 @@
 		5651043127E2E3450003DE23 /* iOSSeniorDeveloperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043027E2E3450003DE23 /* iOSSeniorDeveloperTests.swift */; };
 		5651043B27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */; };
 		5651043D27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */; };
+		7DC612062EC0A590005ACB4E /* LearningSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC612052EC0A590005ACB4E /* LearningSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5651043627E2E3450003DE23 /* iOSSeniorDeveloperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSeniorDeveloperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5651043A27E2E3450003DE23 /* iOSSeniorDeveloperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITests.swift; sourceTree = "<group>"; };
 		5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSeniorDeveloperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7DC612032EC0802B005ACB4E /* LearningSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LearningSwift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC612062EC0A590005ACB4E /* LearningSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,9 +82,11 @@
 		5651040D27E2E3440003DE23 = {
 			isa = PBXGroup;
 			children = (
+				7DC612032EC0802B005ACB4E /* LearningSwift */,
 				5651041827E2E3440003DE23 /* iOSSeniorDeveloper */,
 				5651042F27E2E3450003DE23 /* iOSSeniorDeveloperTests */,
 				5651043927E2E3450003DE23 /* iOSSeniorDeveloperUITests */,
+				7DC612042EC0A590005ACB4E /* Frameworks */,
 				5651041727E2E3440003DE23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +130,13 @@
 				5651043C27E2E3450003DE23 /* iOSSeniorDeveloperUITestsLaunchTests.swift */,
 			);
 			path = iOSSeniorDeveloperUITests;
+			sourceTree = "<group>";
+		};
+		7DC612042EC0A590005ACB4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +459,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +488,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,6 +618,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DC612052EC0A590005ACB4E /* LearningSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LearningSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5651040E27E2E3440003DE23 /* Project object */;
 }
