@@ -44,7 +44,7 @@ extension LearningSendable {
 
         myPrint("Start")
 
-        // runLater { @Sendable in
+        runLater { // @Sendable in
             // This is safe because we're calling an actor-isolated method
             Task {
                 await counter.increment()
@@ -54,8 +54,7 @@ extension LearningSendable {
             Task {
                 await counter.decrement()
             }
-        // }
-
+        }
         myPrint("End — waiting 3 seconds...")
     }
     
