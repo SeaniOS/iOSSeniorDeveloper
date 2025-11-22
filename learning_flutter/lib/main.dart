@@ -25,6 +25,12 @@ void main() {
   print('City: $city');
   print('Country: $country');
   runApp(const MyApp());
+
+  const double pi = 3.14;
+  final DateTime currentTime = DateTime.now(); /// Declares a final variable currentTime that is set at runtime but cannot be changed afterward.
+
+  print('Pi: $pi');
+  print('Current Time: $currentTime');
 }
 
 class MyApp extends StatelessWidget {
