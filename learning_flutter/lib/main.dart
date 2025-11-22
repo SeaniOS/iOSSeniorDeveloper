@@ -10,6 +10,14 @@ void main() {
   print('Age: $age');
   print('Height: $height');
   print('Is a Student: $isStudent');
+
+  List<String> fruits = ['Apple', 'Banana', 'Cherry'];
+  Map<String, int> scores = {'Alice': 90, 'Bob': 85, 'Charlie': 95};
+  String? nullableString = null;
+
+  print('Fruits: $fruits');
+  print('Score of Alice: ${scores['Alice']}');
+  print('Nullable String: $nullableString');
   runApp(const MyApp());
 }
 
