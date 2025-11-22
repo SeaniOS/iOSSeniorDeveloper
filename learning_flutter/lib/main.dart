@@ -18,6 +18,12 @@ void main() {
   print('Fruits: $fruits');
   print('Score of Alice: ${scores['Alice']}');
   print('Nullable String: $nullableString');
+
+  var city = 'New York';  // Type inferred as String
+  String country = 'USA';  // Type annotation
+
+  print('City: $city');
+  print('Country: $country');
   runApp(const MyApp());
 }
 
