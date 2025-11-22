@@ -11,6 +11,7 @@ void main() {
   print('Height: $height');
   print('Is a Student: $isStudent');
 
+
   List<String> fruits = ['Apple', 'Banana', 'Cherry'];
   Map<String, int> scores = {'Alice': 90, 'Bob': 85, 'Charlie': 95};
   String? nullableString = null;
@@ -19,6 +20,7 @@ void main() {
   print('Score of Alice: ${scores['Alice']}');
   print('Nullable String: $nullableString');
 
+
   var city = 'New York';  // Type inferred as String
   String country = 'USA';  // Type annotation
 
@@ -26,11 +28,19 @@ void main() {
   print('Country: $country');
   runApp(const MyApp());
 
+
   const double pi = 3.14;
   final DateTime currentTime = DateTime.now(); /// Declares a final variable currentTime that is set at runtime but cannot be changed afterward.
 
   print('Pi: $pi');
   print('Current Time: $currentTime');
+  
+
+  greet('Alice');
+}
+
+void greet(String name) {
+  print('Hello, $name!');
 }
 
 class MyApp extends StatelessWidget {
