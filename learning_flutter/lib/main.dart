@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+class Person {
+  String name;
+  int age;
+  Person(this.name, this.age);
+  void displayInfo() {
+    print('Name: $name, Age: $age');
+  }
+}
+
 void main() {
   int age = 25;
   double height = 5.9;
@@ -34,9 +43,13 @@ void main() {
 
   print('Pi: $pi');
   print('Current Time: $currentTime');
-  
+
 
   greet('Alice');
+
+
+  Person person = Person('Bob', 30);
+  person.displayInfo();
 }
 
 void greet(String name) {
