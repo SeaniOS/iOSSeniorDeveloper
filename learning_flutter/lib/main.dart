@@ -1,15 +1,39 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+import 'dart:async';
 
 class Person {
   String name;
   int age;
+
   Person(this.name, this.age);
+
   void displayInfo() {
     print('Name: $name, Age: $age');
   }
 }
 
-void main() {
+void main() async {
+  double angle = pi / 4;
+  double sine = sin(angle);
+  double cosine = cos(angle);
+  Random random = Random();
+  int randomNumber = random.nextInt(100);
+  print('Sine: $sine');
+  print('Cosine: $cosine');
+  print('Random Number: $randomNumber');
+
+  Future<String> fetchData() async {
+    await Future.delayed(Duration(seconds: 2));
+    return 'Data fetched!';
+  }
+  String data = await fetchData();
+  print(data);
+
+  runApp(const MyApp());
+}
+
+void labUtilizeVariablesFunctionsMethodsInDart() {
   int age = 25;
   double height = 5.9;
   String name = "John Doe";
@@ -20,7 +44,6 @@ void main() {
   print('Height: $height');
   print('Is a Student: $isStudent');
 
-
   List<String> fruits = ['Apple', 'Banana', 'Cherry'];
   Map<String, int> scores = {'Alice': 90, 'Bob': 85, 'Charlie': 95};
   String? nullableString = null;
@@ -29,24 +52,21 @@ void main() {
   print('Score of Alice: ${scores['Alice']}');
   print('Nullable String: $nullableString');
 
-
-  var city = 'New York';  // Type inferred as String
-  String country = 'USA';  // Type annotation
+  var city = 'New York'; // Type inferred as String
+  String country = 'USA'; // Type annotation
 
   print('City: $city');
   print('Country: $country');
-  runApp(const MyApp());
-
 
   const double pi = 3.14;
-  final DateTime currentTime = DateTime.now(); /// Declares a final variable currentTime that is set at runtime but cannot be changed afterward.
+  final DateTime currentTime = DateTime.now();
+
+  /// Declares a final variable currentTime that is set at runtime but cannot be changed afterward.
 
   print('Pi: $pi');
   print('Current Time: $currentTime');
 
-
   greet('Alice');
-
 
   Person person = Person('Bob', 30);
   person.displayInfo();
