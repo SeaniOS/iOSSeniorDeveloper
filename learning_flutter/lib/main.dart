@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class Person {
   String name;
@@ -29,6 +31,23 @@ void main() async {
   }
   String data = await fetchData();
   print(data);
+
+  String jsonString = '{"name": "Alice", "age": 30}';
+  Map<String, dynamic> user = jsonDecode(jsonString);
+  print('Name: ${user['name']}');
+  print('Age: ${user['age']}');
+  Map<String, dynamic> newUser = {'name': 'Bob', 'age': 25};
+  String newJsonString = jsonEncode(newUser);
+  print(newJsonString);
+
+
+  var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+  var response = await http.get(url);
+  if (response.statusCode == 200) {
+    print('Response data: ${response.body}');
+  } else {
+    print('Request failed with status: ${response.statusCode}');
+  }
 
   runApp(const MyApp());
 }
