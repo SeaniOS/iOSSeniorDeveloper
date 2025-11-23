@@ -3,6 +3,9 @@ import 'dart:math';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
+import 'package:path/path.dart' as p;
+import 'custom.dart';
 
 class Person {
   String name;
@@ -48,6 +51,19 @@ void main() async {
   } else {
     print('Request failed with status: ${response.statusCode}');
   }
+
+  var now = DateTime.now();
+  var formatter = DateFormat('yyyy-MM-dd');
+  String formattedDate = formatter.format(now);
+  print('Formatted date: $formattedDate');
+
+  var fullPath = p.join('directory', 'file.txt');
+  print('Full path: $fullPath');
+
+  int sum = add(10, 5);
+  int difference = subtract(10, 5);
+  print('Sum: $sum');
+  print('Difference: $difference');
 
   runApp(const MyApp());
 }
