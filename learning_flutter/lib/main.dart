@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
 import 'custom.dart';
+import 'complex_debug.dart';
 
 class Person {
   String name;
@@ -19,6 +20,13 @@ class Person {
 }
 
 void main() async {
+  var game = Game();
+  game.start();
+
+  runApp(const MyApp());
+}
+
+void labLibrariesInDart() async {
   double angle = pi / 4;
   double sine = sin(angle);
   double cosine = cos(angle);
@@ -64,8 +72,6 @@ void main() async {
   int difference = subtract(10, 5);
   print('Sum: $sum');
   print('Difference: $difference');
-
-  runApp(const MyApp());
 }
 
 void labUtilizeVariablesFunctionsMethodsInDart() {
