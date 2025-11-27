@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
 import 'custom.dart';
 import 'complex_debug.dart';
+import './MyApp.dart';
 
 class Person {
   String name;
@@ -20,9 +21,10 @@ class Person {
 }
 
 void main() async {
-  var game = Game();
-  game.start();
+  /*var game = Game();
+  game.start();*/
 
+  // runApp(const GeneratedMyApp());
   runApp(const MyApp());
 }
 
@@ -117,8 +119,8 @@ void greet(String name) {
   print('Hello, $name!');
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class GeneratedMyApp extends StatelessWidget {
+  const GeneratedMyApp({super.key});
 
   // This widget is the root of your application.
   @override
