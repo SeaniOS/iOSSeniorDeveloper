@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart'; // Import the logger package
+import 'MyForm.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         /// app title
         appBar: AppBar(title: const Text('Flutter Layout Example')),
-        body: const Column(
+        body: MyForm(),
+        /*body: const Column(
           children: const <Widget>[
             Row(
               /// main axis (horizontal)
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             Text('Welcome to Flutter!'),
             Text('Building a layout is easy.'),
           ],
-        ),
+        ),*/
         // Placeholder for body
       ),
     );
