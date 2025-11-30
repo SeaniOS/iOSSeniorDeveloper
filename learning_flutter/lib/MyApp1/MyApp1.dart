@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'MyForm.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp1 extends StatelessWidget {
+  const MyApp1({super.key});
 
   @override
   /// The context parameter provides information about the location of this widget in the widget tree.

@@ -7,7 +7,8 @@ import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
 import 'custom.dart';
 import 'complex_debug.dart';
-import './MyApp.dart';
+import 'MyApp1/MyApp1.dart';
+import 'MyApp2/MyApp2.dart';
 
 class Person {
   String name;
@@ -25,7 +26,8 @@ void main() async {
   game.start();*/
 
   // runApp(const GeneratedMyApp());
-  runApp(const MyApp());
+  // runApp(const MyApp1());
+  runApp(const MyApp2());
 }
 
 void labLibrariesInDart() async {
