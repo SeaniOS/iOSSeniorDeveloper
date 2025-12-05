@@ -9,6 +9,7 @@ import 'custom.dart';
 import 'complex_debug.dart';
 import 'MyApp1/MyApp1.dart';
 import 'MyApp2/MyApp2.dart';
+import 'flutter_api_lab/MyApp3.dart';
 
 class Person {
   String name;
@@ -27,7 +28,7 @@ void main() async {
 
   // runApp(const GeneratedMyApp());
   // runApp(const MyApp1());
-  runApp(const MyApp2());
+  runApp(const MyApp3());
 }
 
 void labLibrariesInDart() async {
