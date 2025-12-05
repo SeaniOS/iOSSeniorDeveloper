@@ -38,7 +38,23 @@ class _PostListState extends State<PostList> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Failed to load data.'),
+                  Text('Error: ${snapshot.error}'),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        futurePosts = fetchPosts(); // Retry fetching data
+                      });
+                    },
+                    child: const Text('Retry'),
+                  ),
+                ],
+              ),
+            );
           } else if (snapshot.hasData) {
             return ListView.builder(
               itemCount: snapshot.data!.length,
@@ -73,7 +89,9 @@ Future<List<Post>> fetchPosts() async {
 */
 Future<List<Post>> fetchPosts() async {
   try {
-    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts')).timeout(const Duration(seconds: 10));
+    final response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/posts'))
+        .timeout(const Duration(seconds: 10));
 
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);
