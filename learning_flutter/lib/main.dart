@@ -7,9 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
 import 'custom.dart';
 import 'complex_debug.dart';
-import 'MyApp1/MyApp1.dart';
-import 'MyApp2/MyApp2.dart';
-import 'flutter_api_lab/MyApp3.dart';
+import 'explore_plugins/MyApp5.dart';
 
 class Person {
   String name;
@@ -27,8 +25,7 @@ void main() async {
   game.start();*/
 
   // runApp(const GeneratedMyApp());
-  // runApp(const MyApp1());
-  runApp(const MyApp3());
+  runApp(const MyApp5());
 }
 
 void labLibrariesInDart() async {
