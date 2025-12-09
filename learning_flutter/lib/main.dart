@@ -7,7 +7,9 @@ import 'package:intl/intl.dart';
 import 'package:path/path.dart' as p;
 import 'custom.dart';
 import 'complex_debug.dart';
-import 'explore_plugins/MyApp5.dart';
+import 'package:localstorage/localstorage.dart';
+
+import 'local_storage/MyApp6.dart';
 
 class Person {
   String name;
@@ -20,14 +22,21 @@ class Person {
   }
 }
 
+late final ValueNotifier<int> notifier;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initLocalStorage();
+  runApp(MyApp6(localStorage: localStorage));
+}
+/*
 void main() async {
   /*var game = Game();
   game.start();*/
 
   // runApp(const GeneratedMyApp());
-  runApp(const MyApp5());
 }
-
+*/
 void labLibrariesInDart() async {
   double angle = pi / 4;
   double sine = sin(angle);
