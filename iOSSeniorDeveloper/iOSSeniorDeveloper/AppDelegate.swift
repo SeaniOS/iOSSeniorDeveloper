@@ -35,7 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func demo() {
-        demoLearningSwift()
+        // demoLearningSwift()
+        // LearningNetworking.shared.demoCombine()
+        LearningNetworking.shared.demoAlamofire()
+        // ConcurrencyLearning.shared.demo()
     }
 }
 
