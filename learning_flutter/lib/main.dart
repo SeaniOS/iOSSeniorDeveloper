@@ -9,12 +9,13 @@ import 'custom.dart';
 import 'complex_debug.dart';
 import 'package:localstorage/localstorage.dart';
 
+import 'google_analytics/MyApp7.dart';
 import 'local_storage/MyApp6.dart';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-// import 'firebase_options.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+import 'firebase_options.dart';
+
 class Person {
   String name;
   int age;
@@ -30,8 +31,26 @@ late final ValueNotifier<int> notifier;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initLocalStorage();
-  runApp(MyApp6(localStorage: localStorage));
+  // await initLocalStorage();
+  // runApp(MyApp6(localStorage: localStorage));
+
+
+  /// https://firebase.google.com/docs/cli#install_the_firebase_cli
+  /// firebase login --no-localhost
+  ///
+  /// dart pub global activate flutterfire_cli
+  ///
+  /// export PATH="$PATH":"$HOME/.pub-cache/bin"
+  /// nano ~/.zshrc
+  /// source ~/.zshrc
+  ///
+  /// flutterfire --version
+  /// flutterfire configure
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
+  runApp(MyApp7_FirebaseAnalytics());
 }
 /*
 void main() async {
