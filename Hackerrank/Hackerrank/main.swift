@@ -13,4 +13,5 @@ print("Hello, World!")
 // CheckPalindromeByFilteringNonLetters().demo() // String
 // CheckForNonIdenticalStringRotation().demo() // String
 // TargetIndexSearch().demo() // Array
-FindFirstOccurrence().demo() // Array
+// FindFirstOccurrence().demo() // Array
+MaximumNumberOfNonOverlappingIntervals().demo() // Array
