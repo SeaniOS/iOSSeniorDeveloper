@@ -9,5 +9,6 @@ import Foundation
 
 print("Hello, World!")
 
-// FindTheSmallestMissingPositiveInteger().demo()
-CheckPalindromeByFilteringNonLetters().demo()
+// FindTheSmallestMissingPositiveInteger().demo() // Array
+// CheckPalindromeByFilteringNonLetters().demo() // String
+CheckForNonIdenticalStringRotation().demo() // String
