@@ -14,4 +14,6 @@ print("Hello, World!")
 // CheckForNonIdenticalStringRotation().demo() // String
 // TargetIndexSearch().demo() // Array
 // FindFirstOccurrence().demo() // Array
-MaximumNumberOfNonOverlappingIntervals().demo() // Array
+// MaximumNumberOfNonOverlappingIntervals().demo() // Array
+
+RemovableIndices().demo() //
