@@ -18,4 +18,5 @@ print("Hello, World!")
 
 // RemovableIndices().demo() // Array - Mock test
 
-MergeAndSortIntervals().demo()
+// MergeAndSortIntervals().demo()
+LongestArithmeticSubsequenceWithGivenDifference().demo()
