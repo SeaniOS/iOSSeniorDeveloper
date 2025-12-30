@@ -16,4 +16,6 @@ print("Hello, World!")
 // FindFirstOccurrence().demo() // Array
 // MaximumNumberOfNonOverlappingIntervals().demo() // Array
 
-RemovableIndices().demo() //
+// RemovableIndices().demo() // Array - Mock test
+
+MergeAndSortIntervals().demo()
