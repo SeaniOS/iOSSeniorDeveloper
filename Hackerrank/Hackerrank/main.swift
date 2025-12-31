@@ -7,7 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
@@ -15,8 +14,7 @@ print("Hello, World!")
 // TargetIndexSearch().demo() // Array
 // FindFirstOccurrence().demo() // Array
 // MaximumNumberOfNonOverlappingIntervals().demo() // Array
-
 // RemovableIndices().demo() // Array - Mock test
-
 // MergeAndSortIntervals().demo()
-LongestArithmeticSubsequenceWithGivenDifference().demo()
+// LongestArithmeticSubsequenceWithGivenDifference().demo() // Array
+PivotedSearch().demo() // Array
