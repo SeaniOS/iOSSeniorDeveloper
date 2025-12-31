@@ -17,4 +17,5 @@ import Foundation
 // RemovableIndices().demo() // Array - Mock test
 // MergeAndSortIntervals().demo()
 // LongestArithmeticSubsequenceWithGivenDifference().demo() // Array
-PivotedSearch().demo() // Array
+// PivotedSearch().demo() // Array
+FindPeakElementInBitonicArray().demo()

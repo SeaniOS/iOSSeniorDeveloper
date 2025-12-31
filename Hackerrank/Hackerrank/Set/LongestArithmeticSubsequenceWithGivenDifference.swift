@@ -15,7 +15,7 @@ class LongestArithmeticSubsequenceWithGivenDifference {
         print(output) // 6
     }
     
-    func findLongestArithmeticProgression(arr: [Int], k: Int) -> Int {
+    private func findLongestArithmeticProgression(arr: [Int], k: Int) -> Int {
        let mySet = Set(arr)
        var maxCount = 0
        
@@ -42,7 +42,7 @@ class LongestArithmeticSubsequenceWithGivenDifference {
 }
 
 extension LongestArithmeticSubsequenceWithGivenDifference {
-    func findLongestArithmeticProgression_Solution(arr: [Int], k: Int) -> Int {
+    private func findLongestArithmeticProgression_Solution(arr: [Int], k: Int) -> Int {
         let set = Set(arr)   // remove duplicates + O(1) lookup
         var maxLength = 0
 
@@ -64,7 +64,7 @@ extension LongestArithmeticSubsequenceWithGivenDifference {
         return maxLength
     }
     
-    func findLongestArithmeticProgression_FirstTry(arr: [Int], k: Int) -> Int {
+    private func findLongestArithmeticProgression_FirstTry(arr: [Int], k: Int) -> Int {
         let arr = arr.sorted { lhs, rhs in
             return lhs < rhs
         }

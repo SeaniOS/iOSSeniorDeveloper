@@ -14,7 +14,7 @@ class MergeAndSortIntervals {
         print(result) // [[1, 6], [8, 10], [15, 18]]
     }
     
-    func mergeHighDefinitionIntervals(intervals: [[Int]]) -> [[Int]] {
+    private func mergeHighDefinitionIntervals(intervals: [[Int]]) -> [[Int]] {
         let sortedIntervals = intervals.sorted { lhs, rhs in
             lhs[0] < rhs[0]
         }

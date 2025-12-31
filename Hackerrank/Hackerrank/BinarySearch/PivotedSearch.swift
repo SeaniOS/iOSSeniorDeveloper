@@ -15,7 +15,7 @@ class PivotedSearch {
         print(output) // 3
     }
     
-    func searchRotatedTimestamps(nums: [Int], target: Int) -> Int {
+    private func searchRotatedTimestamps(nums: [Int], target: Int) -> Int {
         if nums.count == 0 {
             return -1
         }
