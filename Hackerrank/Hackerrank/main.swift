@@ -18,4 +18,6 @@ import Foundation
 // MergeAndSortIntervals().demo()
 // LongestArithmeticSubsequenceWithGivenDifference().demo() // Array
 // PivotedSearch().demo() // Array
-FindPeakElementInBitonicArray().demo()
+// FindPeakElementInBitonicArray().demo()
+
+ServerGraph().demo()
