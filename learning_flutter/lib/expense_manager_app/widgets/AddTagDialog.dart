@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class AddCategoryDialog extends StatefulWidget {
+class AddTagDialog extends StatefulWidget {
   @override
-  _AddCategoryDialogState createState() => _AddCategoryDialogState();
+  _AddTagDialogState createState() => _AddTagDialogState();
 }
 
-class _AddCategoryDialogState extends State<AddCategoryDialog> {
+class _AddTagDialogState extends State<AddTagDialog> {
   final TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Add Category'),
+      title: Text('Add Tag'),
       content: TextField(
         controller: _nameController,
-        decoration: InputDecoration(labelText: 'Category Name'),
+        decoration: InputDecoration(labelText: 'Tag Name'),
       ),
       actions: <Widget>[
         TextButton(
@@ -25,10 +25,10 @@ class _AddCategoryDialogState extends State<AddCategoryDialog> {
         ),
         ElevatedButton(
           onPressed: () {
-            final categoryName = _nameController.text;
-            if (categoryName.isNotEmpty) {
-              // Add category logic here
-              Navigator.of(context).pop(categoryName);
+            final tagName = _nameController.text;
+            if (tagName.isNotEmpty) {
+              // Add tag logic here
+              Navigator.of(context).pop(tagName);
             }
           },
           child: Text('Add'),
