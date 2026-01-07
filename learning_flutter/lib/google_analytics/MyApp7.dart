@@ -1,6 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import '../expense_manager_app/screens/HomeScreen.dart';
 // import 'firebase_options.dart';
 
 class MyApp7_FirebaseAnalytics extends StatelessWidget {

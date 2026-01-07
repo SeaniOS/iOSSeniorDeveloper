@@ -9,6 +9,8 @@ import 'custom.dart';
 import 'complex_debug.dart';
 import 'package:localstorage/localstorage.dart';
 
+import 'expense_manager_app/MyExpenseManagerApp.dart';
+import 'expense_manager_app/screens/HomeScreen.dart';
 import 'google_analytics/MyApp7.dart';
 import 'local_storage/MyApp6.dart';
 
@@ -50,7 +52,10 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
-  runApp(MyApp7_FirebaseAnalytics());
+  // runApp(MyApp7_FirebaseAnalytics());
+
+  await initLocalStorage();
+  runApp(MyExpenseManagerApp(localStorage: localStorage));
 }
 /*
 void main() async {
