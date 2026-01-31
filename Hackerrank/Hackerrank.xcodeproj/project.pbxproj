@@ -19,6 +19,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D5427EE2F2E580A0078A3F8 /* HackerRankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerRankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7FC19D2F00EEB900B7EF29 /* Hackerrank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hackerrank; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -31,6 +32,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7D5427EB2F2E580A0078A3F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D7FC19A2F00EEB900B7EF29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7FC19D2F00EEB900B7EF29 /* Hackerrank */,
+				7D5427EE2F2E580A0078A3F8 /* HackerRankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +69,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7D5427ED2F2E580A0078A3F8 /* HackerRankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D5427F42F2E580A0078A3F8 /* Build configuration list for PBXNativeTarget "HackerRankTests" */;
+			buildPhases = (
+				7D5427EA2F2E580A0078A3F8 /* Sources */,
+				7D5427EB2F2E580A0078A3F8 /* Frameworks */,
+				7D5427EC2F2E580A0078A3F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackerRankTests;
+			packageProductDependencies = (
+			);
+			productName = HackerRankTests;
+			productReference = 7D5427EE2F2E580A0078A3F8 /* HackerRankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7D7FC19C2F00EEB900B7EF29 /* Hackerrank */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D7FC1A42F00EEB900B7EF29 /* Build configuration list for PBXNativeTarget "Hackerrank" */;
@@ -92,6 +120,9 @@
 				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
+					7D5427ED2F2E580A0078A3F8 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
 					7D7FC19C2F00EEB900B7EF29 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
@@ -112,11 +143,29 @@
 			projectRoot = "";
 			targets = (
 				7D7FC19C2F00EEB900B7EF29 /* Hackerrank */,
+				7D5427ED2F2E580A0078A3F8 /* HackerRankTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		7D5427EC2F2E580A0078A3F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7D5427EA2F2E580A0078A3F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D7FC1992F00EEB900B7EF29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +176,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7D5427F22F2E580A0078A3F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R868Q9952Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sean.HackerRankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7D5427F32F2E580A0078A3F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R868Q9952Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sean.HackerRankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		7D7FC1A22F00EEB900B7EF29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -276,6 +361,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D5427F42F2E580A0078A3F8 /* Build configuration list for PBXNativeTarget "HackerRankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D5427F22F2E580A0078A3F8 /* Debug */,
+				7D5427F32F2E580A0078A3F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7D7FC1982F00EEB900B7EF29 /* Build configuration list for PBXProject "Hackerrank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
