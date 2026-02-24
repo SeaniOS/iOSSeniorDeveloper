@@ -19,5 +19,7 @@ import Foundation
 // LongestArithmeticSubsequenceWithGivenDifference().demo() // Array
 // PivotedSearch().demo() // Array
 // FindPeakElementInBitonicArray().demo()
+// ServerGraph().demo()
 
-ServerGraph().demo()
+TaskScheduler_Cooldown_MultipleMachines().demo()
+

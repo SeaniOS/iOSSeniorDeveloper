@@ -49,54 +49,66 @@ import Foundation
  */
 
 class Machine {
-    var index: Int
     var cooldownInfo: Dictionary<Int, Int> = [:] // task type: available unit
-    
-    init(index: Int) {
-        self.index = index
-    }
 }
 
 class TaskScheduler_Cooldown_MultipleMachines {
-    func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
+    private func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
         // preparation
-        // var tasks = tasks // to be mutable
-        var timeUnit = 1 // init timeUnit
+        var tasks = tasks // to be mutable
+        var timeUnit = 0 // init timeUnit
         
         // preparation for machine
-        
-        // var machines: [Machine] = []
-        let machine = Machine(index: 0)
-        /*
-        
-        for i in 0..<5 {
-            let machine = Machine(index: i)
+        var machines: [Machine] = []
+        for _ in 0..<m {
+            let machine = Machine()
             machines.append(machine)
         }
-        */
         
         // while
-        /*
         while !tasks.isEmpty { // loop until there is no tasks remaining
             // loop through machine
             for machine in machines {
                 // loop through task: find appropriate task for machine
-                let index = tasks.firstIndex { task in
-                    let cooldownInfo = machine.cooldownInfo[task] ?? 0
-                    return cooldownInfo <= timeUnit
-                }
-                
-                if let index {
+                for index in 0..<tasks.count {
                     let task = tasks[index]
-                    machine.cooldownInfo[task] = timeUnit + k
-                    tasks.remove(at: index)
+                    
+                    let cooldownInfo = machine.cooldownInfo[task] ?? -1
+                    if cooldownInfo <= timeUnit {
+                        machine.cooldownInfo[task] = timeUnit + k
+                        tasks.remove(at: index)
+                        break
+                    }
                 }
             }
 
             timeUnit += 1 // increase timeUnit
         }
-        */
         return timeUnit
+    }
+}
+
+extension TaskScheduler_Cooldown_MultipleMachines {
+    func demo() {
+        demoFirst()
+        demoSecond()
+    }
+    
+    private func demoFirst() {
+        let tasks = [1, 1, 2, 1]
+        let m = 2
+        let k = 2
+        
+        let output = calculateMinimumTimeUnits(tasks: tasks, m: m, k: k)
+        print("demoFirst.output: \(output)") // 3
+    }
+    
+    private func demoSecond() {
+        let tasks = [1, 1, 1, 2, 2, 3]
+        let m = 3
+        let k = 2
+        let output = calculateMinimumTimeUnits(tasks: tasks, m: m, k: k)
+        print("demoSecond.output: \(output)") // 2
     }
 }
 
