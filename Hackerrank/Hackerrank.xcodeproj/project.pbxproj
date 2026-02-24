@@ -29,6 +29,11 @@
 			path = Hackerrank;
 			sourceTree = "<group>";
 		};
+		7D89F2B02F4E4E35007F6132 /* LeetCode */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LeetCode;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +57,7 @@
 		7D7FC1942F00EEB900B7EF29 = {
 			isa = PBXGroup;
 			children = (
+				7D89F2B02F4E4E35007F6132 /* LeetCode */,
 				7D7FC19F2F00EEB900B7EF29 /* Hackerrank */,
 				7D7FC19E2F00EEB900B7EF29 /* Products */,
 			);
@@ -102,6 +108,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				7D7FC19F2F00EEB900B7EF29 /* Hackerrank */,
+				7D89F2B02F4E4E35007F6132 /* LeetCode */,
 			);
 			name = Hackerrank;
 			packageProductDependencies = (
