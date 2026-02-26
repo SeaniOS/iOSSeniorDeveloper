@@ -53,7 +53,7 @@ class Machine {
 }
 
 class TaskScheduler_Cooldown_MultipleMachines {
-    private func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
+    private func _calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
         // preparation
         var tasks = tasks // to be mutable
         var timeUnit = 0 // init timeUnit
@@ -77,6 +77,63 @@ class TaskScheduler_Cooldown_MultipleMachines {
                     if cooldownInfo <= timeUnit {
                         machine.cooldownInfo[task] = timeUnit + k
                         tasks.remove(at: index)
+                        break
+                    }
+                }
+            }
+
+            timeUnit += 1 // increase timeUnit
+        }
+        return timeUnit
+    }
+}
+
+extension TaskScheduler_Cooldown_MultipleMachines {
+    private func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
+        // frequentDict
+        var frequentDict: [Int: Int] = [:]
+        for task in tasks {
+            // frequentDict[task] = (frequentDict[task] ?? 0) + 1
+            frequentDict[task, default: 0] += 1
+        }
+        // print("frequentDic: \(frequentDict)")
+        
+        // maxHeap ~ sortedArray
+        var maxHeap: [(Int, Int)] = []
+        for (key, value) in frequentDict {
+            maxHeap.append((key, value))
+        }
+        
+        maxHeap = maxHeap.sorted { $0.1 > $1.1 } // (taskType, remainingCount)
+        // print(maxHeap)
+        
+        // machines
+        var machines: [Machine] = []
+        for _ in 0..<m {
+            let machine = Machine()
+            machines.append(machine)
+        }
+        
+        // process
+        var timeUnit = 0
+        
+        while !maxHeap.isEmpty {
+            for machine in machines {
+                // assign task for machine
+                for index in 0..<maxHeap.count {
+                    let taskInfo = maxHeap[index]
+                    let (task, remainingCount) = taskInfo
+                    
+                    let cooldownInfo = machine.cooldownInfo[task] ?? 0
+                    
+                    if cooldownInfo <= timeUnit {
+                        machine.cooldownInfo[task] = timeUnit + k
+                        
+                        if remainingCount == 1 {
+                            maxHeap.remove(at: index)
+                        } else {
+                            maxHeap[index].1 -= 1 // remainingCount - 1
+                        }
                         break
                     }
                 }

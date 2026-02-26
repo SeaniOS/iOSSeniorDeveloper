@@ -20,7 +20,8 @@ import Foundation
 // PivotedSearch().demo() // Array
 // FindPeakElementInBitonicArray().demo()
 // ServerGraph().demo()
-// TaskScheduler_Cooldown_MultipleMachines().demo()
 
-Heap_347_TopKFrequentElements().demo()
+TaskScheduler_Cooldown_MultipleMachines().demo()
+
+// Heap_347_TopKFrequentElements().demo()
 
