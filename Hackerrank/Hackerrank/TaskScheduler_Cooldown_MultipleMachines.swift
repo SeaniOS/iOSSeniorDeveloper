@@ -52,6 +52,15 @@ class Machine {
     var cooldownInfo: Dictionary<Int, Int> = [:] // task type: available unit
 }
 
+struct TaskInfo: Comparable {
+    var task: Int
+    var remainingCount: Int
+    
+    static func < (lhs: TaskInfo, rhs: TaskInfo) -> Bool {
+        return lhs.remainingCount < rhs.remainingCount
+    }
+}
+
 class TaskScheduler_Cooldown_MultipleMachines {
     private func _calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
         // preparation
@@ -89,7 +98,7 @@ class TaskScheduler_Cooldown_MultipleMachines {
 }
 
 extension TaskScheduler_Cooldown_MultipleMachines {
-    private func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
+    private func __calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
         // frequentDict
         var frequentDict: [Int: Int] = [:]
         for task in tasks {
@@ -146,6 +155,60 @@ extension TaskScheduler_Cooldown_MultipleMachines {
 }
 
 extension TaskScheduler_Cooldown_MultipleMachines {
+    private func calculateMinimumTimeUnits(tasks: [Int], m: Int, k: Int) -> Int {
+        // frequentDict
+        var frequentDict: [Int: Int] = [:]
+        for task in tasks {
+            frequentDict[task, default: 0] += 1
+        }
+        
+        // maxHeap
+        var maxHeap = MaxHeap<TaskInfo>()
+        for (key, value) in frequentDict {
+            maxHeap.push(.init(task: key, remainingCount: value))
+        }
+        
+        // machines
+        var machines: [Machine] = []
+        for _ in 0..<m {
+            let machine = Machine()
+            machines.append(machine)
+        }
+        
+        // process
+        var timeUnit = 0
+        
+        while !maxHeap.isEmpty {
+            for machine in machines {
+                // assign task for machine
+                /*
+                for index in 0..<maxHeap.count {
+                    let taskInfo = maxHeap[index]
+                    let (task, remainingCount) = taskInfo
+                    
+                    let cooldownInfo = machine.cooldownInfo[task] ?? 0
+                    
+                    if cooldownInfo <= timeUnit {
+                        machine.cooldownInfo[task] = timeUnit + k
+                        
+                        if remainingCount == 1 {
+                            maxHeap.remove(at: index)
+                        } else {
+                            maxHeap[index].1 -= 1 // remainingCount - 1
+                        }
+                        break
+                    }
+                }
+                */
+            }
+
+            timeUnit += 1 // increase timeUnit
+        }
+        return timeUnit
+    }
+}
+
+extension TaskScheduler_Cooldown_MultipleMachines {
     func demo() {
         demoFirst()
         demoSecond()
@@ -166,6 +229,69 @@ extension TaskScheduler_Cooldown_MultipleMachines {
         let k = 2
         let output = calculateMinimumTimeUnits(tasks: tasks, m: m, k: k)
         print("demoSecond.output: \(output)") // 2
+    }
+}
+
+struct MaxHeap<T: Comparable> {
+    private var heap: [T] = []
+    
+    var isEmpty: Bool {
+        heap.isEmpty
+    }
+    
+    var peek: T? {
+        heap.first
+    }
+    
+    // Insert
+    mutating func push(_ value: T) {
+        heap.append(value)
+        siftUp(from: heap.count - 1)
+    }
+    
+    // Remove max
+    mutating func pop() -> T? {
+        guard !heap.isEmpty else { return nil }
+        if heap.count == 1 { return heap.removeLast() }
+        
+        heap.swapAt(0, heap.count - 1)
+        let max = heap.removeLast()
+        siftDown(from: 0)
+        return max
+    }
+    
+    // MARK: - Heap helpers
+    
+    private mutating func siftUp(from index: Int) {
+        var child = index
+        var parent = (child - 1) / 2
+        
+        while child > 0 && heap[child] > heap[parent] {
+            heap.swapAt(child, parent)
+            child = parent
+            parent = (child - 1) / 2
+        }
+    }
+    
+    private mutating func siftDown(from index: Int) {
+        var parent = index
+        
+        while true {
+            let left = parent * 2 + 1
+            let right = left + 1
+            var candidate = parent
+            
+            if left < heap.count && heap[left] > heap[candidate] {
+                candidate = left
+            }
+            if right < heap.count && heap[right] > heap[candidate] {
+                candidate = right
+            }
+            if candidate == parent { return }
+            
+            heap.swapAt(parent, candidate)
+            parent = candidate
+        }
     }
 }
 
