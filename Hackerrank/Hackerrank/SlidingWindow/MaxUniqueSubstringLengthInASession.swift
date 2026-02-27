@@ -37,7 +37,7 @@ class MaxUniqueSubstringLengthInASession {
     func maxDistinctSubstringLengthInSessions(sessionString: String) -> Int {
         var maximumLength = 0
         var left = 0
-        var characters = Array(sessionString) /// convert to array
+        let characters = Array(sessionString) /// convert to array
         var lastSeen = [Character: Int]() /// using lastSeen
         
         for right in 0..<sessionString.count { /// make sure O(n)
