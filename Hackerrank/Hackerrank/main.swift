@@ -24,5 +24,6 @@ import Foundation
 // TaskScheduler_Cooldown_MultipleMachines().demo()
 
 // Heap_347_TopKFrequentElements().demo()
-Heap_215_KthLargestElement().demo()
+// Heap_215_KthLargestElement().demo()
+Heap_506_RelativeRanks().demo()
 
