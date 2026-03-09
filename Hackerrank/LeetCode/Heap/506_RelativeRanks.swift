@@ -9,7 +9,8 @@ import Foundation
 
 class Heap_506_RelativeRanks {
     // Brute Force is accepted but Runtime is slow
-    func findRelativeRanks(_ score: [Int]) -> [String] {
+    /// 19 ms
+    func _findRelativeRanks(_ score: [Int]) -> [String] {
         print(score)
         
         let sortedScore = score.sorted { $0 > $1 } /// nlogn
@@ -40,8 +41,57 @@ class Heap_506_RelativeRanks {
 }
 
 extension Heap_506_RelativeRanks {
+    struct HeapItem: Comparable {
+        let score: Int
+        let index: Int
+        
+        static func < (lhs: Heap_506_RelativeRanks.HeapItem, rhs: Heap_506_RelativeRanks.HeapItem) -> Bool {
+            lhs.score < rhs.score
+        }
+    }
+    /// 0 ms
+    func findRelativeRanks(_ score: [Int]) -> [String] {
+        var maxHeap = MaxHeap<HeapItem>()
+        
+        for index in 0..<score.count {
+            let item = HeapItem(score: score[index], index: index)
+            maxHeap.add(item)
+        }
+        // print(maxHeap)
+        
+        var result = Array(repeating: "", count: score.count)
+        // print(result)
+        var rank = 0
+        
+        while !maxHeap.isEmpty {
+            if let top = maxHeap.poll() {
+                // print(top)
+                let rankDescription = getRankDescription(rank: rank)
+                result[top.index] = rankDescription
+                rank += 1
+            }
+        }
+        return result
+    }
+    
+    private func getRankDescription(rank: Int) -> String {
+        if rank == 0 {
+            return "Gold Medal"
+        }
+        if rank == 1 {
+            return "Silver Medal"
+        }
+        if rank == 2 {
+            return "Bronze Medal"
+        }
+        
+        return "\((rank) + 1)"
+    }
+}
+
+extension Heap_506_RelativeRanks {
     func demo() {
-        // testCase1()
+        testCase1()
         testCase2()
     }
     
