@@ -18,12 +18,16 @@ struct MyMaxHeap {
         return heap.first
     }
     
+    var count: Int {
+        return heap.count
+    }
+    
     mutating func add(_ value: Int) {
         heap.append(value)
         heapifyUp()
     }
     
-    mutating func poll(_ value: Int) -> Int? {
+    mutating func poll() -> Int? {
         if heap.isEmpty { return nil }
         
         if heap.count == 1 { return heap.removeLast() }
@@ -49,7 +53,7 @@ struct MyMaxHeap {
     }
     
     mutating func heapifyDown() {
-        var parent = heap[0]
+        var parent = 0 // 0 instead of heap[0]
         
         while true { // while true
             let leftChild = parent * 2 + 1
@@ -64,7 +68,7 @@ struct MyMaxHeap {
                 candidate = rightChild
             }
             
-            if candidate == parent { break }
+            if candidate == parent { return } // return instead of break
             
             heap.swapAt(parent, candidate)
             parent = candidate

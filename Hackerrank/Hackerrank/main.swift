@@ -27,6 +27,7 @@ import Foundation
 // Heap_215_KthLargestElement().demo()
 // Heap_506_RelativeRanks().demo()
 // Heap_1464_MaximumProductOfTwoElements().demo()
+Heap_1046_LastStoneWeight().test()
 
-TwoPointers_15_3Sum().test()
+// TwoPointers_15_3Sum().test()
 

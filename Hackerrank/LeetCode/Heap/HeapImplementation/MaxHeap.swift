@@ -18,6 +18,10 @@ struct MaxHeap<T: Comparable> {
         heap.first
     }
     
+    var count: Int {
+        return heap.count
+    }
+    
     // Insert
     mutating func add(_ value: T) {
         heap.append(value)
