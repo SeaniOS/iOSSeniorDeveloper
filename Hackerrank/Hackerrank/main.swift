@@ -26,5 +26,7 @@ import Foundation
 // Heap_347_TopKFrequentElements().demo()
 // Heap_215_KthLargestElement().demo()
 // Heap_506_RelativeRanks().demo()
-Heap_1464_MaximumProductOfTwoElements().demo()
+// Heap_1464_MaximumProductOfTwoElements().demo()
+
+TwoPointers_15_3Sum().test()
 
