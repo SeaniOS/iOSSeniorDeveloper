@@ -28,7 +28,9 @@ import Foundation
 // Heap_506_RelativeRanks().demo()
 // Heap_1464_MaximumProductOfTwoElements().demo()
 // Heap_1046_LastStoneWeight().test()
-Heap_23_MergeKSortedLists().test()
+// Heap_23_MergeKSortedLists().test()
 
 // TwoPointers_15_3Sum().test()
+
+Stack_20_ValidParentheses().test()
 
