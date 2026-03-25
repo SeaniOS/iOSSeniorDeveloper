@@ -31,6 +31,7 @@ import Foundation
 // Heap_23_MergeKSortedLists().test()
 
 // TwoPointers_15_3Sum().test()
+TwoPointers_27_RemoveElement().test()
 
-Stack_20_ValidParentheses().test()
+// Stack_20_ValidParentheses().test()
 
