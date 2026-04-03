@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'models/time_entry.dart';
-import '../models/models.dart';
+import '../models/time_entry.dart';
 import '../provider/time_entry_provider.dart';
 
 class AddTimeEntryScreen extends StatefulWidget {
@@ -11,8 +10,8 @@ class AddTimeEntryScreen extends StatefulWidget {
 
 class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
   final _formKey = GlobalKey<FormState>();
-  String projectId = '';
-  String taskId = '';
+  String projectId = 'Project 1';
+  String taskId = 'Task 1';
   double totalTime = 0.0;
   DateTime date = DateTime.now();
   String notes = '';
@@ -88,7 +87,7 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
                   Provider.of<TimeEntryProvider>(context, listen: false)
-                      .addTimeEntry(TimeEntry(
+                      .addEntry(TimeEntry(
                     id: DateTime.now().toString(), // Simple ID generation
                     projectId: projectId,
                     taskId: taskId,
