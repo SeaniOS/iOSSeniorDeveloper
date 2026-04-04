@@ -38,12 +38,12 @@ class TimeEntryProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteEntry(int id) {
+  void deleteEntry(String id) {
     _entries.removeWhere((element) => element.id == id);
     _saveToStorage();
     notifyListeners();
   }
-
+  /*
   void updateStudent(TimeEntry entry) {
     var index = _entries.indexWhere((element) => element.id == entry.id);
     if (index != -1) {
@@ -52,6 +52,7 @@ class TimeEntryProvider with ChangeNotifier {
       notifyListeners();
     }
   }
+  */
 }
 
 extension TimeEntryProviderExtension on TimeEntryProvider {

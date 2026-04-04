@@ -39,24 +39,11 @@ class HomeScreen extends StatelessWidget {
 }
 
 extension HomeScreenExtension on HomeScreen {
-  Widget _buildEntryItem(TimeEntry entry) {
-    final date = DateFormat('yyyy-MM-dd HH:mm:ss').format(entry.date); // entry.date.toString()
-    final title = '${entry.projectId} - ${entry.taskId} - ${entry.totalTime} hours';
-
-    return ListTile(
-      title: Text(title),
-      subtitle: Text('$date - Notes: ${entry.notes}'),
-      onTap: () {
-        // This could open a detailed view or edit screen
-      },
-    );
-  }
-
   Widget _buildEntryItemByGroup(
-      BuildContext context,
-      int index,
-      TimeEntryProvider provider,
-      ) {
+    BuildContext context,
+    int index,
+    TimeEntryProvider provider,
+  ) {
     final projectMap = provider.entriesByProject;
     final projectId = projectMap.keys.elementAt(index);
     final entries = projectMap[projectId];
@@ -65,7 +52,34 @@ extension HomeScreenExtension on HomeScreen {
     return ExpansionTile(
       title: Text(projectId),
       subtitle: Text('Total: $totalTime hours'),
-      children: entries?.map((entry) => _buildEntryItem(entry)).toList() ?? []
+      children: entries?.map((entry) => _buildEntryItem(entry, provider)).toList() ?? [],
+    );
+  }
+
+  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider,) {
+    final date = DateFormat(
+      'yyyy-MM-dd HH:mm:ss',
+    ).format(entry.date); // entry.date.toString()
+    final title =
+        '${entry.projectId} - ${entry.taskId} - ${entry.totalTime} hours';
+
+    return Dismissible(
+      key: Key(entry.id),
+      direction: DismissDirection.endToStart,
+      background: Container(
+        color: Colors.red,
+        alignment: Alignment.centerRight,
+        padding: EdgeInsets.only(right: 16),
+        child: Icon(Icons.delete, color: Colors.white),
+      ),
+      onDismissed: (_) => provider.deleteEntry(entry.id),
+      child: ListTile(
+        title: Text(title),
+        subtitle: Text('$date - Notes: ${entry.notes}'),
+        onTap: () {
+          // This could open a detailed view or edit screen
+        },
+      ),
     );
   }
 }
