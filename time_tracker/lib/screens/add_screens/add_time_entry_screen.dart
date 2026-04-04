@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/time_entry.dart';
-import '../provider/time_entry_provider.dart';
+import '../../models/time_entry.dart';
+import '../../provider/time_entry_provider.dart';
 
 class AddTimeEntryScreen extends StatefulWidget {
   @override

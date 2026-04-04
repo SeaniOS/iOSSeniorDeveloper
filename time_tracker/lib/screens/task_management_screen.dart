@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/time_entry_provider.dart';
 // import '../widgets/add_task_dialog.dart';
-import '../models/models.dart';
+import '../models/task.dart';
 
 class TaskManagementScreen extends StatelessWidget {
+  const TaskManagementScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

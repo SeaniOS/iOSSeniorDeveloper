@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:time_tracker/models/time_entry.dart';
 
 import '../provider/time_entry_provider.dart';
-import 'add_time_entry_screen.dart';
+import 'add_screens/add_time_entry_screen.dart';
 import 'package:intl/intl.dart';
 
 import 'project_management_screen.dart';
