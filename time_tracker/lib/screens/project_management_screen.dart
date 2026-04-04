@@ -20,7 +20,21 @@ class ProjectManagementScreen extends StatelessWidget {
             itemCount: provider.projects.length,
             itemBuilder: (context, index) {
               final project = provider.projects.elementAt(index);
-              return Text(project.name);
+
+              return Dismissible(
+                key: Key(project.id),
+                direction: DismissDirection.endToStart,
+                background: Container(
+                  color: Colors.red,
+                  alignment: Alignment.centerRight,
+                  padding: EdgeInsets.only(right: 16),
+                  child: Icon(Icons.delete, color: Colors.white),
+                ),
+                onDismissed: (_) => provider.deleteProject(project.id),
+                child: ListTile(
+                  title: Text(project.name)
+                ),
+              );
             },
           );
         },
