@@ -6,11 +6,34 @@ import '../provider/time_entry_provider.dart';
 import 'add_time_entry_screen.dart';
 import 'package:intl/intl.dart';
 
+import 'project_management_screen.dart';
+import 'task_management_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Time Entries')),
+      appBar: AppBar(
+        title: Text('Time Entries'),
+        actions: [
+          TextButton.icon(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
+            ),
+            icon: Icon(Icons.settings),
+            label: Text('Projects', style: TextStyle(color: Colors.black)),
+          ),
+          TextButton.icon(
+            icon: Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => TaskManagementScreen()),
+            ),
+            label: Text('Tasks', style: TextStyle(color: Colors.black)),
+          ),
+        ],
+      ),
       body: Consumer<TimeEntryProvider>(
         builder: (context, provider, child) {
           final projectMap = provider.entriesByProject;
@@ -52,11 +75,13 @@ extension HomeScreenExtension on HomeScreen {
     return ExpansionTile(
       title: Text(projectId),
       subtitle: Text('Total: $totalTime hours'),
-      children: entries?.map((entry) => _buildEntryItem(entry, provider)).toList() ?? [],
+      children:
+          entries?.map((entry) => _buildEntryItem(entry, provider)).toList() ??
+          [],
     );
   }
 
-  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider,) {
+  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider) {
     final date = DateFormat(
       'yyyy-MM-dd HH:mm:ss',
     ).format(entry.date); // entry.date.toString()
