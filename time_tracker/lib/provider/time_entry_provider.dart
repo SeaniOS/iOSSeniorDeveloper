@@ -16,17 +16,19 @@ class TimeEntryProvider with ChangeNotifier {
   void _loadEntriesFromStorage() async {
     var data = storage.getItem('Entries');
     if (data != null) {
-      _entries = List<TimeEntry>.from((jsonDecode(data) as List)
-          .map((item) => TimeEntry.fromMap(item as Map<String, dynamic>)));
+      _entries = List<TimeEntry>.from(
+        (jsonDecode(data) as List).map(
+          (item) => TimeEntry.fromMap(item as Map<String, dynamic>),
+        ),
+      );
       notifyListeners();
     }
   }
 
   void _saveToStorage() {
-    storage.setItem('Entries',
-        jsonEncode(_entries.map((entry) => entry.toMap())
-            .toList()
-        )
+    storage.setItem(
+      'Entries',
+      jsonEncode(_entries.map((entry) => entry.toMap()).toList()),
     );
   }
 
@@ -49,5 +51,29 @@ class TimeEntryProvider with ChangeNotifier {
       _saveToStorage();
       notifyListeners();
     }
+  }
+}
+
+extension TimeEntryProviderExtension on TimeEntryProvider {
+  Map<String, List<TimeEntry>> get entriesByProject {
+    final Map<String, List<TimeEntry>> groups = {};
+
+    for (final entry in _entries) {
+      final key = entry.projectId;
+      groups.putIfAbsent(key, () => []).add(entry);
+    }
+
+    return groups;
+  }
+
+  double totalTimeByProject(String projectId) {
+    final entries = entriesByProject[projectId];
+
+    if (entries != null) {
+      final totalHour = entries.fold<double>(0, (sum, entry) => sum + entry.totalTime);
+      return totalHour;
+    }
+
+    return 0.0;
   }
 }
