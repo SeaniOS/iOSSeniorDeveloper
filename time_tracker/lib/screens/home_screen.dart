@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/models/time_entry.dart';
 import 'package:time_tracker/provider/project_provider.dart';
+import 'package:time_tracker/provider/task_provider.dart';
 
 import '../provider/time_entry_provider.dart';
 import 'add_screens/add_time_entry_screen.dart';
@@ -18,11 +19,11 @@ class HomeScreen extends StatelessWidget {
         title: Text('Time Entries'),
         actions: [
           TextButton.icon(
+            icon: Icon(Icons.settings),
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
             ),
-            icon: Icon(Icons.settings),
             label: Text('Projects', style: TextStyle(color: Colors.black)),
           ),
           TextButton.icon(
@@ -72,6 +73,7 @@ extension HomeScreenExtension on HomeScreen {
     final projectId = projectMap.keys.elementAt(index);
 
     final projectName = Provider.of<ProjectProvider>(context).getProjectName(projectId);
+
     final entries = projectMap[projectId];
     final totalTime = provider.totalTimeByProject(projectId);
 
@@ -79,17 +81,21 @@ extension HomeScreenExtension on HomeScreen {
       title: Text(projectName),
       subtitle: Text('Total: $totalTime hours'),
       children:
-          entries?.map((entry) => _buildEntryItem(entry, provider, projectName)).toList() ??
+          entries?.map((entry) {
+            // each entry
+            final taskName = Provider.of<TaskProvider>(context).getTaskName(entry.taskId);
+            return _buildEntryItem(entry, provider, projectName, taskName);
+          }).toList() ??
           [],
     );
   }
 
-  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider, String projectName) {
+  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider, String projectName, String taskName) {
     final date = DateFormat(
       'yyyy-MM-dd HH:mm:ss',
     ).format(entry.date); // entry.date.toString()
     final title =
-        '$projectName - ${entry.taskId} - ${entry.totalTime} hours';
+        '$projectName - $taskName - ${entry.totalTime} hours';
 
     return Dismissible(
       key: Key(entry.id),

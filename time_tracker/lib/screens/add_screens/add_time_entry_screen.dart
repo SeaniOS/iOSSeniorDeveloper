@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/models/project.dart';
+import 'package:time_tracker/models/task.dart';
 import 'package:time_tracker/provider/project_provider.dart';
+import 'package:time_tracker/provider/task_provider.dart';
 import '../../models/time_entry.dart';
 import '../../provider/time_entry_provider.dart';
 
@@ -13,7 +15,7 @@ class AddTimeEntryScreen extends StatefulWidget {
 class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
   final _formKey = GlobalKey<FormState>();
   String projectId = '';
-  String taskId = 'Task 1';
+  String taskId = '';
   double totalTime = 0.0;
   DateTime date = DateTime.now();
   String notes = '';
@@ -22,8 +24,14 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final projects = Provider.of<ProjectProvider>(context).projects;
+    final tasks = Provider.of<TaskProvider>(context).tasks;
+
     if (!projects.isEmpty) {
       projectId = projects.first.id;
+    }
+
+    if (!tasks.isEmpty) {
+      taskId = tasks.first.id;
     }
   }
 
@@ -35,8 +43,8 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
         key: _formKey,
         child: Column(
           children: <Widget>[
-            _buildA(),
-            _buildB(),
+            _buildProjectDropDown(),
+            _buildTaskDropdown(),
             _buildC(),
             _buildD(),
             _buildE(),
@@ -48,48 +56,53 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
 }
 
 extension _AddTimeEntryScreenStateExtension on _AddTimeEntryScreenState {
-  Widget _buildA() {
-    return Consumer<ProjectProvider>(builder: (context, provider, _) {
-      return DropdownButtonFormField<String>(
-        value: projectId,
-        onChanged: (String? newValue) {
-          setState(() {
-            projectId = newValue!;
-          });
-        },
-        decoration: InputDecoration(labelText: 'Project'),
-        items:
-        // <String>['Project 1', 'Project 2', 'Project 3'] // Dummy project name
-        provider.projects
-            .map<DropdownMenuItem<String>>((Project project) {
-          return DropdownMenuItem<String>(
-            value: project.id,
-            child: Text(project.name),
-          );
-        })
-            .toList(),
-      );
-    });
+  Widget _buildProjectDropDown() {
+    return Consumer<ProjectProvider>(
+      builder: (context, provider, _) {
+        return DropdownButtonFormField<String>(
+          value: projectId,
+          onChanged: (String? newValue) {
+            setState(() {
+              projectId = newValue!;
+            });
+          },
+          decoration: InputDecoration(labelText: 'Project'),
+          items:
+              // <String>['Project 1', 'Project 2', 'Project 3'] // Dummy project name
+              provider.projects.map<DropdownMenuItem<String>>((
+                Project project,
+              ) {
+                return DropdownMenuItem<String>(
+                  value: project.id,
+                  child: Text(project.name),
+                );
+              }).toList(),
+        );
+      },
+    );
   }
 
-  Widget _buildB() {
-    return DropdownButtonFormField<String>(
-      value: taskId,
-      onChanged: (String? newValue) {
-        setState(() {
-          taskId = newValue!;
-        });
-      },
-      decoration: InputDecoration(labelText: 'Task'),
-      items:
-          <String>['Task 1', 'Task 2', 'Task 3'] // Dummy task names
-              .map<DropdownMenuItem<String>>((String value) {
+  Widget _buildTaskDropdown() {
+    return Consumer<TaskProvider>(
+      builder: (context, provider, _) {
+        return DropdownButtonFormField<String>(
+          value: taskId,
+          onChanged: (String? newValue) {
+            setState(() {
+              taskId = newValue!;
+            });
+          },
+          decoration: InputDecoration(labelText: 'Task'),
+          items:
+              // <String>['Task 1', 'Task 2', 'Task 3'] // Dummy task names
+              provider.tasks.map<DropdownMenuItem<String>>((Task task) {
                 return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
+                  value: task.id,
+                  child: Text(task.name),
                 );
-              })
-              .toList(),
+              }).toList(),
+        );
+      },
     );
   }
 
