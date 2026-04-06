@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/models/time_entry.dart';
+import 'package:time_tracker/provider/project_provider.dart';
 
 import '../provider/time_entry_provider.dart';
 import 'add_screens/add_time_entry_screen.dart';
@@ -69,24 +70,26 @@ extension HomeScreenExtension on HomeScreen {
   ) {
     final projectMap = provider.entriesByProject;
     final projectId = projectMap.keys.elementAt(index);
+
+    final projectName = Provider.of<ProjectProvider>(context).getProjectName(projectId);
     final entries = projectMap[projectId];
     final totalTime = provider.totalTimeByProject(projectId);
 
     return ExpansionTile(
-      title: Text(projectId),
+      title: Text(projectName),
       subtitle: Text('Total: $totalTime hours'),
       children:
-          entries?.map((entry) => _buildEntryItem(entry, provider)).toList() ??
+          entries?.map((entry) => _buildEntryItem(entry, provider, projectName)).toList() ??
           [],
     );
   }
 
-  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider) {
+  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider, String projectName) {
     final date = DateFormat(
       'yyyy-MM-dd HH:mm:ss',
     ).format(entry.date); // entry.date.toString()
     final title =
-        '${entry.projectId} - ${entry.taskId} - ${entry.totalTime} hours';
+        '$projectName - ${entry.taskId} - ${entry.totalTime} hours';
 
     return Dismissible(
       key: Key(entry.id),

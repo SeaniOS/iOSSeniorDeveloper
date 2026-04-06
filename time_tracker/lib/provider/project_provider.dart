@@ -52,4 +52,12 @@ class ProjectProvider with ChangeNotifier {
       _projects.add(Project(id: '3', name: 'Project 3'));
     }
   }
+
+  String getProjectName(String projectId) {
+    Project project = _projects.firstWhere(
+      (project) => project.id == projectId,
+      orElse: () => Project(id: '', name: ''),
+    );
+    return project.name;
+  }
 }

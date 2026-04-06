@@ -12,19 +12,23 @@ class AddTimeEntryScreen extends StatefulWidget {
 
 class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
   final _formKey = GlobalKey<FormState>();
-  String projectId = 'Project 1';
+  String projectId = '';
   String taskId = 'Task 1';
   double totalTime = 0.0;
   DateTime date = DateTime.now();
   String notes = '';
 
   @override
-  Widget build(BuildContext context) {
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     final projects = Provider.of<ProjectProvider>(context).projects;
-    /*
     if (!projects.isEmpty) {
       projectId = projects.first.id;
-    }*/
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Add Time Entry')),
       body: Form(
@@ -45,24 +49,27 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
 
 extension _AddTimeEntryScreenStateExtension on _AddTimeEntryScreenState {
   Widget _buildA() {
-    return DropdownButtonFormField<String>(
-      value: projectId,
-      onChanged: (String? newValue) {
-        setState(() {
-          projectId = newValue!;
-        });
-      },
-      decoration: InputDecoration(labelText: 'Project'),
-      items:
-          <String>['Project 1', 'Project 2', 'Project 3'] // Dummy project name
-              .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              })
-              .toList(),
-    );
+    return Consumer<ProjectProvider>(builder: (context, provider, _) {
+      return DropdownButtonFormField<String>(
+        value: projectId,
+        onChanged: (String? newValue) {
+          setState(() {
+            projectId = newValue!;
+          });
+        },
+        decoration: InputDecoration(labelText: 'Project'),
+        items:
+        // <String>['Project 1', 'Project 2', 'Project 3'] // Dummy project name
+        provider.projects
+            .map<DropdownMenuItem<String>>((Project project) {
+          return DropdownMenuItem<String>(
+            value: project.id,
+            child: Text(project.name),
+          );
+        })
+            .toList(),
+      );
+    });
   }
 
   Widget _buildB() {
