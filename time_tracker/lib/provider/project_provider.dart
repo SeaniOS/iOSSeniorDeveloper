@@ -9,6 +9,7 @@ class ProjectProvider with ChangeNotifier {
 
   ProjectProvider({required this.storage}) {
     _loadProjectsFromStorage();
+    addDefaultProjects();
   }
 
   List<Project> get projects => _projects;
@@ -42,5 +43,13 @@ class ProjectProvider with ChangeNotifier {
     _projects.removeWhere((element) => element.id == id);
     _saveToStorage();
     notifyListeners();
+  }
+
+  void addDefaultProjects() {
+    if (_projects.isEmpty) {
+      _projects.add(Project(id: '1', name: 'Project 1'));
+      _projects.add(Project(id: '2', name: 'Project 2'));
+      _projects.add(Project(id: '3', name: 'Project 3'));
+    }
   }
 }
