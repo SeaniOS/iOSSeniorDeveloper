@@ -41,14 +41,18 @@ class _AddTimeEntryScreenState extends State<AddTimeEntryScreen> {
       appBar: AppBar(title: Text('Add Time Entry')),
       body: Form(
         key: _formKey,
-        child: Column(
-          children: <Widget>[
-            _buildProjectDropDown(),
-            _buildTaskDropdown(),
-            _buildC(),
-            _buildD(),
-            _buildE(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              _buildProjectDropDown(),
+              _buildTaskDropdown(),
+              _buildHoursField(),
+              _buildNotesField(),
+              SizedBox(height: 16.0),
+              _buildSaveButton(),
+            ],
+          ),
         ),
       ),
     );
@@ -106,7 +110,7 @@ extension _AddTimeEntryScreenStateExtension on _AddTimeEntryScreenState {
     );
   }
 
-  Widget _buildC() {
+  Widget _buildHoursField() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'Total Time (hours)'),
       keyboardType: TextInputType.numberWithOptions(decimal: true),
@@ -123,7 +127,7 @@ extension _AddTimeEntryScreenStateExtension on _AddTimeEntryScreenState {
     );
   }
 
-  Widget _buildD() {
+  Widget _buildNotesField() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'Notes'),
       validator: (value) {
@@ -136,7 +140,7 @@ extension _AddTimeEntryScreenStateExtension on _AddTimeEntryScreenState {
     );
   }
 
-  Widget _buildE() {
+  Widget _buildSaveButton() {
     return ElevatedButton(
       onPressed: () {
         if (_formKey.currentState!.validate()) {
