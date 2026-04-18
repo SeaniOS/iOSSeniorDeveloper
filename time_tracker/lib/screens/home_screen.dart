@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Time Entries'),
+        title: Text('All Entries'), // Time Entries
         actions: [
           TextButton.icon(
             icon: Icon(Icons.settings),
@@ -40,12 +40,16 @@ class HomeScreen extends StatelessWidget {
         builder: (context, provider, child) {
           final projectMap = provider.entriesByProject;
 
-          return ListView.builder(
-            itemCount: projectMap.keys.length, // provider.entries.length
-            itemBuilder: (context, index) {
-              return _buildEntryItemByGroup(context, index, provider);
-            },
-          );
+          if (projectMap.isEmpty) {
+            return _buildEmptyStateUI();
+          } else {
+            return ListView.builder(
+              itemCount: projectMap.keys.length, // provider.entries.length
+              itemBuilder: (context, index) {
+                return _buildEntryItemByGroup(context, index, provider);
+              },
+            );
+          }
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -72,7 +76,9 @@ extension HomeScreenExtension on HomeScreen {
     final projectMap = provider.entriesByProject;
     final projectId = projectMap.keys.elementAt(index);
 
-    final projectName = Provider.of<ProjectProvider>(context).getProjectName(projectId);
+    final projectName = Provider.of<ProjectProvider>(
+      context,
+    ).getProjectName(projectId);
 
     final entries = projectMap[projectId];
     final totalTime = provider.totalTimeByProject(projectId);
@@ -83,19 +89,25 @@ extension HomeScreenExtension on HomeScreen {
       children:
           entries?.map((entry) {
             // each entry
-            final taskName = Provider.of<TaskProvider>(context).getTaskName(entry.taskId);
+            final taskName = Provider.of<TaskProvider>(
+              context,
+            ).getTaskName(entry.taskId);
             return _buildEntryItem(entry, provider, projectName, taskName);
           }).toList() ??
           [],
     );
   }
 
-  Widget _buildEntryItem(TimeEntry entry, TimeEntryProvider provider, String projectName, String taskName) {
+  Widget _buildEntryItem(
+    TimeEntry entry,
+    TimeEntryProvider provider,
+    String projectName,
+    String taskName,
+  ) {
     final date = DateFormat(
       'yyyy-MM-dd HH:mm:ss',
     ).format(entry.date); // entry.date.toString()
-    final title =
-        '$projectName - $taskName - ${entry.totalTime} hours';
+    final title = '$projectName - $taskName - ${entry.totalTime} hours';
 
     return Dismissible(
       key: Key(entry.id),
@@ -113,6 +125,17 @@ extension HomeScreenExtension on HomeScreen {
         onTap: () {
           // This could open a detailed view or edit screen
         },
+      ),
+    );
+  }
+}
+
+extension HomeScreenExtensionEmpty on HomeScreen {
+  Widget _buildEmptyStateUI() {
+    return Center(
+      child: Text(
+        "There is no entries. \nTap the + button to add a new entry.",
+        textAlign: TextAlign.center,
       ),
     );
   }

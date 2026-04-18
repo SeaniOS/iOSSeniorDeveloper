@@ -43,16 +43,6 @@ class TimeEntryProvider with ChangeNotifier {
     _saveToStorage();
     notifyListeners();
   }
-  /*
-  void updateStudent(TimeEntry entry) {
-    var index = _entries.indexWhere((element) => element.id == entry.id);
-    if (index != -1) {
-      _entries[index] = entry;
-      _saveToStorage();
-      notifyListeners();
-    }
-  }
-  */
 }
 
 extension TimeEntryProviderExtension on TimeEntryProvider {
