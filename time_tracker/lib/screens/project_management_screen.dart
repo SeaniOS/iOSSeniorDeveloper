@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/provider/project_provider.dart';
-import '../provider/time_entry_provider.dart';
-
-// import '../widgets/add_project_dialog.dart';
-import 'add_screens/add_project_screen.dart';
+import '../dialogs/add_project_dialog.dart';
 
 class ProjectManagementScreen extends StatelessWidget {
   const ProjectManagementScreen({super.key});
@@ -31,9 +28,7 @@ class ProjectManagementScreen extends StatelessWidget {
                   child: Icon(Icons.delete, color: Colors.white),
                 ),
                 onDismissed: (_) => provider.deleteProject(project.id),
-                child: ListTile(
-                  title: Text(project.name)
-                ),
+                child: ListTile(title: Text(project.name)),
               );
             },
           );
@@ -42,9 +37,9 @@ class ProjectManagementScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add new project
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddProjectScreen()),
+          showDialog(
+            context: context,
+            builder: (_) => const AddProjectDialog(),
           );
         },
         child: Icon(Icons.add),
