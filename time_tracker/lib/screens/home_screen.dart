@@ -34,9 +34,8 @@ extension HomeScreenExtensionScaffold on HomeScreen {
       appBar: AppBar(
         title: Text('Time Entries'),
         bottom: const TabBar(tabs: HomeScreen.myTabs),
-
-        actions: _buildActions(context),
       ),
+      drawer: _buildDrawer(context),
       body: TabBarView(children: [_buildFirstTab(), _buildSecondTab()]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -96,27 +95,6 @@ extension HomeScreenExtensionScaffold on HomeScreen {
         }
       },
     );
-  }
-
-  List<Widget> _buildActions(BuildContext context) {
-    return [
-      TextButton.icon(
-        icon: Icon(Icons.settings),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
-        ),
-        label: Text('Projects', style: TextStyle(color: Colors.black)),
-      ),
-      TextButton.icon(
-        icon: Icon(Icons.settings),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => TaskManagementScreen()),
-        ),
-        label: Text('Tasks', style: TextStyle(color: Colors.black)),
-      ),
-    ];
   }
 }
 
@@ -190,6 +168,49 @@ extension HomeScreenExtensionEmpty on HomeScreen {
       child: Text(
         "There is no entries. \nTap the + button to add a new entry.",
         textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+extension HomeScreenExtensionHamburger on HomeScreen {
+  Widget _buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(color: Colors.blue),
+            child: Text(
+              'Management',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+          ),
+
+          ListTile(
+            leading: Icon(Icons.folder),
+            title: Text('Projects'),
+            onTap: () {
+              Navigator.pop(context); // to close drawer
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: Icon(Icons.task),
+            title: Text('Tasks'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => TaskManagementScreen()),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
