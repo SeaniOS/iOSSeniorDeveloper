@@ -12,46 +12,32 @@ import 'project_management_screen.dart';
 import 'task_management_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
+
+  static const List<Tab> myTabs = <Tab>[
+    Tab(text: 'All Entries'),
+    Tab(text: 'Grouped by Projects'),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: myTabs.length,
+      child: _buildScaffold(context),
+    );
+  }
+}
+
+extension HomeScreenExtensionScaffold on HomeScreen {
+  Widget _buildScaffold(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Entries'), // Time Entries
-        actions: [
-          TextButton.icon(
-            icon: Icon(Icons.settings),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
-            ),
-            label: Text('Projects', style: TextStyle(color: Colors.black)),
-          ),
-          TextButton.icon(
-            icon: Icon(Icons.settings),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => TaskManagementScreen()),
-            ),
-            label: Text('Tasks', style: TextStyle(color: Colors.black)),
-          ),
-        ],
-      ),
-      body: Consumer<TimeEntryProvider>(
-        builder: (context, provider, child) {
-          final projectMap = provider.entriesByProject;
+        title: Text('Time Entries'),
+        bottom: const TabBar(tabs: HomeScreen.myTabs),
 
-          if (projectMap.isEmpty) {
-            return _buildEmptyStateUI();
-          } else {
-            return ListView.builder(
-              itemCount: projectMap.keys.length, // provider.entries.length
-              itemBuilder: (context, index) {
-                return _buildEntryItemByGroup(context, index, provider);
-              },
-            );
-          }
-        },
+        actions: _buildActions(context),
       ),
+      body: TabBarView(children: [_buildFirstTab(), _buildSecondTab()]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Navigate to the screen to add a new time entry
@@ -64,6 +50,72 @@ class HomeScreen extends StatelessWidget {
         tooltip: 'Add Time Entry',
       ),
     );
+  }
+
+  Widget _buildFirstTab() {
+    return Consumer<TimeEntryProvider>(
+      builder: (context, provider, child) {
+        final entries = provider.entries;
+
+        if (entries.isEmpty) {
+          return _buildEmptyStateUI();
+        } else {
+          return ListView.builder(
+            itemCount: entries.length,
+            itemBuilder: (context, index) {
+              final entry = entries[index];
+              final projectName = Provider.of<ProjectProvider>(
+                context,
+              ).getProjectName(entry.projectId);
+              final taskName = Provider.of<TaskProvider>(
+                context,
+              ).getTaskName(entry.taskId);
+              return _buildEntryItem(entry, provider, projectName, taskName);
+            },
+          );
+        }
+      },
+    );
+  }
+
+  Widget _buildSecondTab() {
+    return Consumer<TimeEntryProvider>(
+      builder: (context, provider, child) {
+        final projectMap = provider.entriesByProject;
+
+        if (projectMap.isEmpty) {
+          return _buildEmptyStateUI();
+        } else {
+          return ListView.builder(
+            itemCount: projectMap.keys.length, // provider.entries.length
+            itemBuilder: (context, index) {
+              return _buildEntryItemByGroup(context, index, provider);
+            },
+          );
+        }
+      },
+    );
+  }
+
+  List<Widget> _buildActions(BuildContext context) {
+    return [
+      TextButton.icon(
+        icon: Icon(Icons.settings),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => ProjectManagementScreen()),
+        ),
+        label: Text('Projects', style: TextStyle(color: Colors.black)),
+      ),
+      TextButton.icon(
+        icon: Icon(Icons.settings),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => TaskManagementScreen()),
+        ),
+        label: Text('Tasks', style: TextStyle(color: Colors.black)),
+      ),
+    ];
   }
 }
 
