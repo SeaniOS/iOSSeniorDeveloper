@@ -66,6 +66,7 @@ extension HomeScreenExtensionScaffold on HomeScreen {
               final entry = entries[index];
               final projectName = Provider.of<ProjectProvider>(
                 context,
+                listen: false,
               ).getProjectName(entry.projectId);
               final taskName = Provider.of<TaskProvider>(
                 context,
@@ -130,6 +131,7 @@ extension HomeScreenExtension on HomeScreen {
 
     final projectName = Provider.of<ProjectProvider>(
       context,
+      listen: false,
     ).getProjectName(projectId);
 
     final entries = projectMap[projectId];
