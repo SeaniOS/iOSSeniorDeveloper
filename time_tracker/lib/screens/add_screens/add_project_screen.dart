@@ -27,31 +27,37 @@ class _AddProjectScreenState extends State<AddProjectScreen> {
       ),
       body: Form(
         key: _formKey,
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              decoration: InputDecoration(labelText: 'Name'),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter project name';
-                }
-                return null;
-              },
-              onSaved: (value) => name = value!,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                  Provider.of<ProjectProvider>(context, listen: false)
-                  .addProject(Project(id: Uuid().v4(), name: name));
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Name'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter project name';
+                  }
+                  return null;
+                },
+                onSaved: (value) => name = value!,
+              ),
 
-                  Navigator.pop(context);
-                }
-              },
-              child: Text('Save'),
-            )
-          ],
+              SizedBox(height: 16.0),
+
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    Provider.of<ProjectProvider>(context, listen: false)
+                    .addProject(Project(id: Uuid().v4(), name: name));
+
+                    Navigator.pop(context);
+                  }
+                },
+                child: Text('Save'),
+              )
+            ],
+          ),
         ),
       ),
     );
