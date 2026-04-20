@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker/screens/add_screens/add_task_screen.dart';
 import '../provider/task_provider.dart';
-
-// import '../widgets/add_task_dialog.dart';
-import '../models/task.dart';
+import '../dialogs//add_task_dialog.dart';
 
 class TaskManagementScreen extends StatelessWidget {
   const TaskManagementScreen({super.key});
@@ -39,9 +36,9 @@ class TaskManagementScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddTaskScreen()),
+          showDialog(
+            context: context,
+            builder: (_) => const AddTaskDialog(),
           );
         },
         child: Icon(Icons.add),
