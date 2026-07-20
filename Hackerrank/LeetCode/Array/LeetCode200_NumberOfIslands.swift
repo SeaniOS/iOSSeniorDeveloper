@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// DFS
 class LeetCode200_NumberOfIslands {
     func numIslands(_ grid: [[Character]]) -> Int {
         var count = 0

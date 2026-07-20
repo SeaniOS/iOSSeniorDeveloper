@@ -7,7 +7,8 @@
 
 import Foundation
 
-LeetCode200_NumberOfIslands().demo()
+// LeetCode200_NumberOfIslands().demo()
+LeetCode27_RemoveElement().demo()
 
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
