@@ -30,7 +30,6 @@ class LeetCode27_RemoveElement {
 extension LeetCode27_RemoveElement {
     func demo() {
         test01()
-        test02()
     }
     
     private func test01() {
@@ -39,8 +38,5 @@ extension LeetCode27_RemoveElement {
         let output = removeElement(&nums, val) // 2
         // nums = [2,2,_,_]
         print(output)
-    }
-    
-    private func test02() {
     }
 }
