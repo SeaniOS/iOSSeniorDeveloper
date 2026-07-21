@@ -9,7 +9,8 @@ import Foundation
 
 // LeetCode200_NumberOfIslands().demo()
 // LeetCode27_RemoveElement().demo()
-LeetCode14_LongestCommonPrefix().demo()
+// LeetCode14_LongestCommonPrefix().demo()
+LeetCode1480_RunningSum().demo()
 
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
