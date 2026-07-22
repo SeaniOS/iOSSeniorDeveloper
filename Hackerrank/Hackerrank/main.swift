@@ -11,7 +11,8 @@ import Foundation
 // LeetCode27_RemoveElement().demo()
 // LeetCode14_LongestCommonPrefix().demo()
 // LeetCode1480_RunningSum().demo()
-LeetCode344_ReverseString().demo()
+// LeetCode344_ReverseString().demo()
+LeetCode88_MergeSortedArray().demo()
 
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
