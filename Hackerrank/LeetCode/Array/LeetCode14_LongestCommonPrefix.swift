@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// two pointers
+/// string process
 class LeetCode14_LongestCommonPrefix {
     func longestCommonPrefix(_ strs: [String]) -> String {
         guard strs.count >= 1 else { return "" }

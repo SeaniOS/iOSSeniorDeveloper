@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// two pointers
+/// sum | formula
 class LeetCode1480_RunningSum {
     func runningSum2(_ nums: [Int]) -> [Int] {
         var sum = nums[0]
