@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// template
+/// two pointers
 class LeetCode26_RemoveDuplicatesFromSortedArray {
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         guard !nums.isEmpty else { return 0 }
