@@ -13,8 +13,8 @@ import Foundation
 // LeetCode1480_RunningSum().demo()
 // LeetCode344_ReverseString().demo()
 // LeetCode88_MergeSortedArray().demo()
-LeetCode26_RemoveDuplicatesFromSortedArray().demo()
-
+// LeetCode26_RemoveDuplicatesFromSortedArray().demo()
+LeetCode414_ThirdMaximumNumber().demo()
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
