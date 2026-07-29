@@ -20,6 +20,7 @@ class Node {
     }
 }
 
+/// HashMap
 class LRUCache {
     let capacity: Int
     var dict: Dictionary<Int, Node> = [:]
