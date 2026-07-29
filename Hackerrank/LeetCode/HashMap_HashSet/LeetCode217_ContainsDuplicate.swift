@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// template
+/// hash set
 class LeetCode217_ContainsDuplicate {
     func containsDuplicate(_ nums: [Int]) -> Bool {
         var set: Set<Int> = []

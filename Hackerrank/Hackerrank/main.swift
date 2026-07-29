@@ -16,7 +16,8 @@ import Foundation
 // LeetCode26_RemoveDuplicatesFromSortedArray().demo()
 
 // LeetCode414_ThirdMaximumNumber().demo()
-LeetCode217_ContainsDuplicate().demo()
+// LeetCode217_ContainsDuplicate().demo()
+LeetCode387_FirstUniqueCharacterInAString().demo()
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
