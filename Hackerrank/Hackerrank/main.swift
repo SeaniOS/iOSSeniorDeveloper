@@ -18,7 +18,8 @@ import Foundation
 // LeetCode414_ThirdMaximumNumber().demo()
 // LeetCode217_ContainsDuplicate().demo()
 // LeetCode387_FirstUniqueCharacterInAString().demo()
-LeetCode350_IntersectionOfTwoArraysII().demo()
+// LeetCode350_IntersectionOfTwoArraysII().demo()
+LeetCode349_IntersectionOfTwoArrays().demo()
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
