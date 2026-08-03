@@ -19,7 +19,8 @@ import Foundation
 // LeetCode217_ContainsDuplicate().demo()
 // LeetCode387_FirstUniqueCharacterInAString().demo()
 // LeetCode350_IntersectionOfTwoArraysII().demo()
-LeetCode349_IntersectionOfTwoArrays().demo()
+// LeetCode349_IntersectionOfTwoArrays().demo()
+LeetCode242_ValidAnagram().demo()
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
