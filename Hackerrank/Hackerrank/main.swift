@@ -20,7 +20,9 @@ import Foundation
 // LeetCode387_FirstUniqueCharacterInAString().demo()
 // LeetCode350_IntersectionOfTwoArraysII().demo()
 // LeetCode349_IntersectionOfTwoArrays().demo()
-LeetCode242_ValidAnagram().demo()
+// LeetCode242_ValidAnagram().demo()
+
+MyStack().push(1)
 
 // FindTheSmallestMissingPositiveInteger().demo() // Array
 // CheckPalindromeByFilteringNonLetters().demo() // String
