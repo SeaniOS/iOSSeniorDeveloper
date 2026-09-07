@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// LIFO
+/// LIFO | FILO
 struct Stack<T> {
     private var array = Array<T>()
     
@@ -21,6 +21,10 @@ struct Stack<T> {
     
     mutating func pop() -> T {
         array.removeLast()
+    }
+    
+    func peek() -> T? {
+        array.last
     }
 }
 
